@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeU-SPEED — HRD Corp Claimable AI Programmes for Malaysian Employers</title>
+  <meta name="description" content="HRD Corp claimable corporate AI training programmes from Asia e University's School of Professional and Executive Education Development (AeU-SPEED). Live online across Malaysia with e-TRiS paperwork prepared for HR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Strict 3-colour AeU Brand Palette: White, AeU Navy (#0A3A5C), AeU Red (#C8102E) */
+      --white: #ffffff;
+      --navy: #0a3a5c;
+      --navy-dark: #072942;
+      --navy-75: rgba(10, 58, 92, 0.78);
+      --navy-55: rgba(10, 58, 92, 0.58);
+      --navy-15: rgba(10, 58, 92, 0.15);
+      --navy-08: rgba(10, 58, 92, 0.08);
+      --navy-03: rgba(10, 58, 92, 0.03);
+      --red: #c8102e;
+      --red-dark: #a30c25;
+      --red-25: rgba(200, 16, 46, 0.25);
+      --red-08: rgba(200, 16, 46, 0.08);
+
+      --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+      --shadow-card: 0 8px 24px -10px var(--navy-08);
+      --shadow-card-hover: 0 16px 34px -12px rgba(10, 58, 92, 0.16);
+      --max-w: 1120px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--white);
+      color: var(--navy);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: clip;
+      background-color: var(--white);
+      color: var(--navy);
+      text-align: center;
+    }
+
+    img, svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        padding-inline: 1.5rem;
+      }
+    }
+
+    .visually-hidden:where(:not(:focus-within, :active)) {
+      position: absolute !important;
+      clip-path: inset(50%) !important;
+      overflow: hidden !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: -1px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      white-space: nowrap !important;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 700;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-pill);
+      z-index: 100;
+      transition: top 0.15s ease;
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      margin: 0;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .accent-red {
+      color: var(--red);
+    }
+
+    .section {
+      padding-block: 4rem;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding-block: 5.25rem;
+      }
+    }
+
+    .section-tint {
+      background-color: var(--navy-03);
+      border-block: 1px solid var(--navy-15);
+    }
+
+    .section-header {
+      max-width: 740px;
+      margin-inline: auto;
+      margin-bottom: 2.75rem;
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.35rem 0.95rem;
+      border-radius: var(--radius-pill);
+      background: var(--red-08);
+      border: 1px solid var(--red-25);
+      color: var(--red);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.55rem);
+      line-height: 1.15;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-subtitle {
+      font-size: clamp(0.98rem, 2vw, 1.1rem);
+      color: var(--navy-75);
+      margin: 0 auto;
+    }
+
+    /* Buttons: One Navy style + One Red accent style */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.2;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 3px;
+    }
+
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 6px 18px -6px rgba(10, 58, 92, 0.35);
+    }
+
+    .btn-navy:hover {
+      background: var(--navy-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -6px rgba(10, 58, 92, 0.45);
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: var(--white);
+      box-shadow: 0 6px 18px -6px rgba(200, 16, 46, 0.35);
+    }
+
+    .btn-red:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -6px rgba(200, 16, 46, 0.45);
+    }
+
+    .btn-sm {
+      padding: 0.55rem 1.15rem;
+      font-size: 0.875rem;
+    }
+
+    /* Centered Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--navy-15);
+    }
+
+    .header-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding-block: 0.9rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--navy);
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.82rem;
+      border-bottom: 3px solid var(--red);
+    }
+
+    .brand-sub {
+      font-weight: 600;
+      font-size: 0.78rem;
+      color: var(--navy-55);
+      border-left: 1px solid var(--navy-15);
+      padding-left: 0.6rem;
+    }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem 1.2rem;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy-75);
+      padding: 0.3rem 0.4rem;
+      border-radius: 6px;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible {
+      color: var(--red);
+    }
+
+    /* Hero */
+    .hero {
+      padding-block: 3.5rem 3.25rem;
+      background: var(--white);
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        padding-block: 4.5rem 3.75rem;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.42rem 1.05rem;
+      border-radius: var(--radius-pill);
+      background: var(--red-08);
+      border: 1px solid var(--red-25);
+      color: var(--red);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.35rem;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--red);
+    }
+
+    .hero-title {
+      font-size: clamp(2.05rem, 5.5vw, 3.65rem);
+      font-weight: 800;
+      line-height: 1.1;
+      max-width: 860px;
+      margin-inline: auto;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.16rem);
+      color: var(--navy-75);
+      max-width: 740px;
+      margin-inline: auto;
+      margin-bottom: 2.25rem;
+    }
+
+    /* Animated SVG Hero Visual */
+    .hero-visual-wrap {
+      max-width: 820px;
+      margin-inline: auto;
+      margin-bottom: 2.25rem;
+      padding: 0.75rem;
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .svg-pulse-ring {
+        transform-origin: 410px 185px;
+        animation: svgPulse 3.6s ease-in-out infinite;
+      }
+      .svg-pulse-ring-2 {
+        transform-origin: 410px 185px;
+        animation: svgPulse 3.6s ease-in-out 1.2s infinite;
+      }
+      .svg-orbit-group {
+        transform-origin: 410px 185px;
+        animation: svgFloat 7s ease-in-out infinite alternate;
+      }
+      .svg-chip-a {
+        animation: chipBob 4.5s ease-in-out infinite alternate;
+      }
+      .svg-chip-b {
+        animation: chipBob 5.2s ease-in-out 0.8s infinite alternate;
+      }
+      .svg-chip-c {
+        animation: chipBob 4.8s ease-in-out 1.5s infinite alternate;
+      }
+      .svg-line-flow {
+        stroke-dasharray: 6 8;
+        animation: dashFlow 18s linear infinite;
+      }
+    }
+
+    @keyframes svgPulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.55;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.18;
+      }
+    }
+
+    @keyframes svgFloat {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes chipBob {
+      0% {
+        transform: translateY(0px);
+      }
+      100% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes dashFlow {
+      to {
+        stroke-dashoffset: -280;
+      }
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-bottom: 2.75rem;
+    }
+
+    /* Trust Strip Stats */
+    .trust-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      max-width: 960px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .trust-strip {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .trust-stat {
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.15rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
+    .trust-stat-value {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.45rem;
+      color: var(--red);
+    }
+
+    .trust-stat-label {
+      font-size: 0.9rem;
+      color: var(--navy-75);
+      margin: 0;
+    }
+
+    /* Tools Marquee */
+    .marquee-section {
+      padding-block: 2.25rem;
+      border-block: 1px solid var(--navy-15);
+      background: var(--navy-03);
+    }
+
+    .marquee-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .marquee-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy-55);
+      margin: 0;
+    }
+
+    .marquee-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--navy-15);
+      background: var(--white);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .marquee-toggle:hover,
+    .marquee-toggle:focus-visible {
+      border-color: var(--navy);
+      color: var(--red);
+      outline: none;
+    }
+
+    .marquee-viewport {
+      overflow: hidden;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 1rem;
+      padding-block: 0.25rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .marquee-track:not(.is-paused) {
+        animation: marqueeScroll 32s linear infinite;
+      }
+      .marquee-viewport:hover .marquee-track:not(.is-paused) {
+        animation-play-state: paused;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-viewport {
+        overflow-x: auto;
+        mask-image: none;
+      }
+      .marquee-track {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+      }
+      .marquee-group-clone {
+        display: none;
+      }
+    }
+
+    @keyframes marqueeScroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .tool-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.58rem 1.1rem;
+      border-radius: var(--radius-pill);
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      color: var(--navy);
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      box-shadow: 0 2px 8px -4px var(--navy-08);
+    }
+
+    .tool-pill svg {
+      width: 16px;
+      height: 16px;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    /* Cards */
+    .flat-card {
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      border-radius: var(--radius-lg);
+      padding: 1.9rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .flat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--navy);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    /* Courses Grid */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .course-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge-claimable {
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: var(--red-08);
+      border: 1px solid var(--red-25);
+      color: var(--red);
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .badge-meta {
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: var(--navy-03);
+      border: 1px solid var(--navy-15);
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
+
+    .course-title {
+      font-size: 1.32rem;
+      line-height: 1.25;
+      margin-bottom: 0.45rem;
+    }
+
+    .course-audience {
+      font-size: 0.9rem;
+      color: var(--navy-55);
+      margin: 0 0 1rem;
+    }
+
+    .course-price {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .course-price span {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--navy-55);
+    }
+
+    .course-claim-line {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--red);
+      background: var(--red-08);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.85rem;
+      margin: 0 0 1.25rem;
+      max-width: 380px;
+    }
+
+    .course-outcomes {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      width: 100%;
+    }
+
+    .course-outcomes li {
+      font-size: 0.92rem;
+      color: var(--navy-75);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+    }
+
+    .course-outcomes li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .course-card .btn {
+      margin-top: auto;
+      width: 100%;
+      max-width: 220px;
+    }
+
+    .courses-notes {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .courses-note {
+      display: inline-block;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-pill);
+      background: var(--navy-03);
+      border: 1px solid var(--navy-15);
+      color: var(--navy);
+      font-size: 0.93rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .claims-fineprint {
+      max-width: 720px;
+      margin: 0.5rem auto 0;
+      font-size: 0.84rem;
+      color: var(--navy-55);
+    }
+
+    /* Why HR Teams Choose AeU-SPEED */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      max-width: 1040px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 640px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .feature-card {
+      padding: 1.75rem 1.35rem;
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--navy-03);
+      border: 1px solid var(--navy-15);
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .feature-title {
+      font-size: 1.08rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .feature-desc {
+      font-size: 0.91rem;
+      color: var(--navy-75);
+      margin: 0;
+    }
+
+    /* How the Claim Works */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 980px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .step-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      border: 2px solid var(--red);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.15rem;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.1rem;
+    }
+
+    .step-title {
+      font-size: 1.12rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .step-desc {
+      font-size: 0.93rem;
+      color: var(--navy-75);
+      margin: 0;
+    }
+
+    /* Lead Form */
+    .form-card {
+      max-width: 680px;
+      margin-inline: auto;
+      padding: 2.25rem 1.35rem;
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (min-width: 640px) {
+      .form-card {
+        padding: 2.75rem 2.5rem;
+      }
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .field-full {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .field label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .field-hint {
+      font-size: 0.78rem;
+      color: var(--navy-55);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.78rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--navy-15);
+      background: var(--white);
+      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      text-align: center;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .field textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px var(--navy-08);
+    }
+
+    .field :is(:user-invalid, .user-invalid-fallback) {
+      border-color: var(--red);
+      background-color: var(--red-08);
+    }
+
+    .field :is(:user-valid, .user-valid-fallback) {
+      border-color: var(--navy);
+    }
+
+    .error-msg {
+      display: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--red);
+      margin-top: 0.15rem;
+    }
+
+    .field :is(:user-invalid, .user-invalid-fallback) + .error-msg {
+      display: block;
+    }
+
+    .form-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .form-status {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      background: var(--navy-03);
+      border: 1px solid var(--navy-15);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .form-status.is-visible {
+      display: flex;
+    }
+
+    .form-status-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      max-width: 760px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--navy-15);
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 12px -6px var(--navy-08);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
+    }
+
+    .faq-item[open] {
+      border-color: var(--navy);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 1.15rem 1.35rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::before {
+      content: "";
+      inline-size: 1rem;
+      block-size: 1rem;
+      flex-shrink: 0;
+      background-color: var(--red);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat center / contain;
+      rotate: -90deg;
+    }
+
+    .faq-item[open] > summary::before {
+      rotate: 0deg;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .faq-item summary::before {
+        transition: rotate 0.2s ease;
+      }
+      .faq-item::details-content {
+        transition: block-size 0.3s ease-in-out, content-visibility 0.3s ease-in-out, display 0.3s ease-in-out;
+        transition-behavior: allow-discrete;
+      }
+    }
+
+    .faq-item::details-content {
+      interpolate-size: allow-keywords;
+      overflow: clip;
+      contain: layout;
+    }
+
+    .faq-item:not([open])::details-content {
+      block-size: 0;
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      color: var(--navy-75);
+      font-size: 0.95rem;
+      max-width: 640px;
+      margin-inline: auto;
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--navy-15);
+      padding-block: 3rem;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-inner strong {
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .footer-link {
+      color: var(--white);
+      font-weight: 700;
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 1px;
+    }
+
+    .footer-link:hover {
+      opacity: 0.85;
+    }
+
+    /* Scroll Reveal (CSS Scroll-Driven with IntersectionObserver fallback) */
+    @media (prefers-reduced-motion: no-preference) {
+      @supports ((animation-timeline: view()) and (animation-range: entry)) {
+        @keyframes scrollReveal {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .reveal {
+          animation: scrollReveal linear both;
+          animation-timeline: view();
+          animation-range: entry 0% entry 30%;
+        }
+      }
+
+      .reveal.reveal-js-pending {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .reveal.reveal-js-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="AeU-SPEED Home">
+        <span class="brand-mark" aria-hidden="true">AI</span>
+        <span>AeU-SPEED</span>
+        <span class="brand-sub">Asia e University</span>
+      </a>
+      <nav class="nav-bar" aria-label="Primary navigation">
+        <a href="#courses" class="nav-link">Programmes</a>
+        <a href="#why-aeu" class="nav-link">Why HR Chooses AeU</a>
+        <a href="#hrd-corp" class="nav-link">How the Claim Works</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#proposal-form" class="btn btn-red btn-sm">Get a Corporate Proposal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          <span>HRD Corp Claimable Courses for Employers</span>
+        </div>
+
+        <h1 class="hero-title">
+          Upskill Your Workforce in AI. <span class="accent-red">Funded by Your HRD Corp Levy.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Your company already contributes 1% of payroll to HRD Corp every month. AeU-SPEED's AI programmes turn that levy into a workforce that saves hours every week — delivered live online by Asia e University, with the claim paperwork prepared for you.
+        </p>
+
+        <!-- Animated SVG Hero Visual (AeU Navy linework + AeU Red accent nodes on White) -->
+        <div class="hero-visual-wrap">
+          <svg class="hero-svg" viewBox="0 0 820 370" role="img" aria-label="Animated enterprise AI capability network connecting AeU-SPEED core training to company workflows">
+            <!-- Subtle dot grid inside SVG -->
+            <rect width="820" height="370" fill="#ffffff" rx="14" />
+
+            <!-- Orbit rings -->
+            <ellipse cx="410" cy="185" rx="265" ry="118" fill="none" stroke="#0a3a5c" stroke-opacity="0.16" stroke-width="1.2" stroke-dasharray="4 6" />
+            <circle cx="410" cy="185" r="102" fill="none" stroke="#0a3a5c" stroke-opacity="0.22" stroke-width="1.2" class="svg-pulse-ring" />
+            <circle cx="410" cy="185" r="76" fill="none" stroke="#c8102e" stroke-opacity="0.3" stroke-width="1.2" class="svg-pulse-ring-2" />
+
+            <!-- Connection paths from Core (410,185) to Department Nodes -->
+            <path id="path-tl" d="M 410 185 Q 290 120 175 95" fill="none" stroke="#0a3a5c" stroke-width="1.6" stroke-opacity="0.45" class="svg-line-flow" />
+            <path id="path-tr" d="M 410 185 Q 530 120 645 95" fill="none" stroke="#0a3a5c" stroke-width="1.6" stroke-opacity="0.45" class="svg-line-flow" />
+            <path id="path-bl" d="M 410 185 Q 290 250 175 275" fill="none" stroke="#0a3a5c" stroke-width="1.6" stroke-opacity="0.45" class="svg-line-flow" />
+            <path id="path-br" d="M 410 185 Q 530 250 645 275" fill="none" stroke="#0a3a5c" stroke-width="1.6" stroke-opacity="0.45" class="svg-line-flow" />
+
+            <!-- Animated data packets along paths (SMIL) -->
+            <circle r="4.5" fill="#c8102e">
+              <animateMotion dur="3.2s" repeatCount="indefinite">
+                <mpath href="#path-tl" />
+              </animateMotion>
+            </circle>
+            <circle r="4.5" fill="#0a3a5c">
+              <animateMotion dur="3.8s" begin="0.6s" repeatCount="indefinite">
+                <mpath href="#path-tr" />
+              </animateMotion>
+            </circle>
+            <circle r="4.5" fill="#0a3a5c">
+              <animateMotion dur="3.5s" begin="1.1s" repeatCount="indefinite">
+                <mpath href="#path-bl" />
+              </animateMotion>
+            </circle>
+            <circle r="4.5" fill="#c8102e">
+              <animateMotion dur="4.1s" begin="0.3s" repeatCount="indefinite">
+                <mpath href="#path-br" />
+              </animateMotion>
+            </circle>
+
+            <!-- Central AI Core -->
+            <g class="svg-orbit-group">
+              <circle cx="410" cy="185" r="52" fill="#0a3a5c" stroke="#c8102e" stroke-width="2.5" />
+              <circle cx="410" cy="185" r="42" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1" />
+              <text x="410" y="180" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="800" letter-spacing="1">AeU-SPEED</text>
+              <text x="410" y="198" text-anchor="middle" fill="#ffffff" fill-opacity="0.88" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">WORKFORCE AI</text>
+            </g>
+
+            <!-- Node 1 (Top Left) -->
+            <g transform="translate(85, 65)">
+              <rect width="184" height="58" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5" />
+              <circle cx="26" cy="29" r="11" fill="#0a3a5c" />
+              <path d="M22 29h8M26 25v8" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" />
+              <text x="46" y="26" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Prompt Workflows</text>
+              <text x="46" y="42" fill="#0a3a5c" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="10.5">Emails, Reports &amp; SOPs</text>
+            </g>
+
+            <!-- Node 2 (Top Right) -->
+            <g transform="translate(551, 65)">
+              <rect width="184" height="58" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5" />
+              <circle cx="26" cy="29" r="11" fill="#c8102e" />
+              <rect x="21" y="24" width="10" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="1.5" />
+              <text x="46" y="26" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">AI Agents</text>
+              <text x="46" y="42" fill="#0a3a5c" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="10.5">n8n &amp; Copilot Studio</text>
+            </g>
+
+            <!-- Node 3 (Bottom Left) -->
+            <g transform="translate(85, 246)">
+              <rect width="184" height="58" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5" />
+              <circle cx="26" cy="29" r="11" fill="#0a3a5c" />
+              <path d="M21 32l4-4 3 3 4-5" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <text x="46" y="26" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Department Tracks</text>
+              <text x="46" y="42" fill="#0a3a5c" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="10.5">HR, Marketing &amp; Finance</text>
+            </g>
+
+            <!-- Node 4 (Bottom Right) -->
+            <g transform="translate(551, 246)">
+              <rect width="184" height="58" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5" />
+              <circle cx="26" cy="29" r="11" fill="#c8102e" />
+              <path d="M21 29l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              <text x="46" y="26" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">PDPA Governance</text>
+              <text x="46" y="42" fill="#0a3a5c" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="10.5">Safe Enterprise Rollout</text>
+            </g>
+
+            <!-- Floating Tool Chips -->
+            <g class="svg-chip-a">
+              <rect x="350" y="28" width="120" height="28" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.3" />
+              <text x="410" y="46" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="11" font-weight="600">ChatGPT &amp; Claude</text>
+            </g>
+            <g class="svg-chip-b">
+              <rect x="350" y="314" width="120" height="28" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.3" />
+              <text x="410" y="332" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="11" font-weight="600">Copilot &amp; Gemini</text>
+            </g>
+            <g class="svg-chip-c">
+              <rect x="16" y="171" width="88" height="28" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.3" />
+              <text x="60" y="189" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="11" font-weight="600">n8n + MCP</text>
+            </g>
+            <g class="svg-chip-a">
+              <rect x="714" y="171" width="90" height="28" rx="14" fill="#c8102e" />
+              <text x="759" y="189" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="11" font-weight="700">HRD Corp</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="#proposal-form" class="btn btn-red">Get a Corporate Proposal</a>
+          <a href="#courses" class="btn btn-navy">See Programmes</a>
+        </div>
+
+        <div class="trust-strip" aria-label="Malaysia workforce AI readiness statistics">
+          <div class="trust-stat reveal">
+            <span class="trust-stat-value">620,000</span>
+            <p class="trust-stat-label">Malaysian jobs affected by AI in 3–5 years</p>
+          </div>
+          <div class="trust-stat reveal">
+            <span class="trust-stat-value">Only 12%</span>
+            <p class="trust-stat-label">of employees have received sufficient AI training</p>
+          </div>
+          <div class="trust-stat reveal">
+            <span class="trust-stat-value">≈3,000 vs ≈30,000</span>
+            <p class="trust-stat-label">AI professionals available vs ≈30,000 needed — upskill the team you have</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Marquee -->
+    <section class="marquee-section" aria-label="Enterprise AI tools covered in AeU-SPEED programmes">
+      <div class="container">
+        <div class="marquee-header">
+          <p class="marquee-label">Enterprise AI Tools Your Workforce Will Use</p>
+          <button type="button" class="marquee-toggle" id="marquee-toggle">Pause</button>
+        </div>
+      </div>
+      <div class="marquee-viewport">
+        <div class="marquee-track" id="marquee-track">
+          <div class="marquee-group">
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>ChatGPT</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Microsoft Copilot</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/></svg>Copilot Studio</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/></svg>Google Gemini</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M9 12h6"/></svg>Claude</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 12h4l3-4.5M12.5 12l3 4.5"/></svg>n8n</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Perplexity</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 4"/></svg>Midjourney</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10H7z"/><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/></svg>MCP</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>ChatGPT Agents</span>
+          </div>
+          <div class="marquee-group marquee-group-clone" aria-hidden="true">
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>ChatGPT</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>Microsoft Copilot</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/></svg>Copilot Studio</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5L12 2z"/></svg>Google Gemini</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M9 12h6"/></svg>Claude</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8.5 12h4l3-4.5M12.5 12l3 4.5"/></svg>n8n</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>Perplexity</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 4"/></svg>Midjourney</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10H7z"/><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/></svg>MCP</span>
+            <span class="tool-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>ChatGPT Agents</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="section" id="courses">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Corporate Workforce Programmes</span>
+          <h2 class="section-title">AI Programmes Structured for HR Budgeting &amp; Levy Claims</h2>
+          <p class="section-subtitle">
+            Enroll individual employees into live-online public cohorts or book dedicated in-house runs for departments and leadership teams.
+          </p>
+        </div>
+
+        <div class="courses-grid">
+          <!-- Course 1 -->
+          <article class="flat-card course-card reveal">
+            <div class="course-badges">
+              <span class="badge-claimable">HRD Corp Claimable — up to RM1,750 per employee/day</span>
+              <span class="badge-meta">1 Day • Live Online</span>
+            </div>
+            <h3 class="course-title">GenAI at Work: ChatGPT, Copilot, Gemini &amp; Claude</h3>
+            <p class="course-audience">Company-wide cohorts across operations, admin &amp; commercial teams</p>
+            <div class="course-price">RM1,490 <span>/ employee</span></div>
+            <p class="course-claim-line">Priced within the RM1,750/day public cap</p>
+            <ul class="course-outcomes">
+              <li>Standardised prompt frameworks for consistent team output</li>
+              <li>AI workflows for email, management reports, and meeting minutes</li>
+              <li>Selecting the right tool across ChatGPT, Copilot, Gemini &amp; Claude</li>
+              <li>Company safe-use policy, confidentiality, and PDPA compliance</li>
+            </ul>
+            <a href="#proposal-form" class="btn btn-navy enquire-btn" data-course="GenAI at Work: ChatGPT, Copilot, Gemini & Claude">Enquire</a>
+          </article>
+
+          <!-- Course 2 -->
+          <article class="flat-card course-card reveal">
+            <div class="course-badges">
+              <span class="badge-claimable">HRD Corp Claimable — up to RM1,750 per employee/day</span>
+              <span class="badge-meta">2 Days • Live Online</span>
+            </div>
+            <h3 class="course-title">Build Your First AI Agent</h3>
+            <p class="course-audience">For operations leads, IT staff &amp; department workflow champions</p>
+            <div class="course-price">RM2,990 <span>/ employee</span></div>
+            <p class="course-claim-line">Within the 2-day public cap of RM3,500</p>
+            <ul class="course-outcomes">
+              <li>Build 4 working AI agents for real company workflows</li>
+              <li>Hands-on automation with n8n, Copilot Studio, and Claude</li>
+              <li>Connect documents, inboxes, and approvals with human sign-off</li>
+              <li>Includes 3 months post-training implementation support</li>
+            </ul>
+            <a href="#proposal-form" class="btn btn-navy enquire-btn" data-course="Build Your First AI Agent">Enquire</a>
+          </article>
+
+          <!-- Course 3 -->
+          <article class="flat-card course-card reveal">
+            <div class="course-badges">
+              <span class="badge-claimable">HRD Corp Claimable — up to RM1,750 per employee/day</span>
+              <span class="badge-meta">1 Day • Live Online</span>
+            </div>
+            <h3 class="course-title">AI for HR, Marketing &amp; Finance Teams</h3>
+            <p class="course-audience">Dedicated functional tracks for HR, Marketing &amp; Finance departments</p>
+            <div class="course-price">RM3,190 <span>/ employee</span></div>
+            <p class="course-claim-line">Claim RM1,750 from your levy — the balance is a small top-up from your training budget</p>
+            <ul class="course-outcomes">
+              <li>HR track: candidate screening, JD drafting, and onboarding packs</li>
+              <li>Marketing track: campaign planning, multi-channel copy, and visuals</li>
+              <li>Finance track: management reporting, variance notes, and reconciliation</li>
+              <li>Department-ready prompt libraries built for immediate deployment</li>
+            </ul>
+            <a href="#proposal-form" class="btn btn-navy enquire-btn" data-course="AI for HR, Marketing & Finance Teams">Enquire</a>
+          </article>
+
+          <!-- Course 4 -->
+          <article class="flat-card course-card reveal">
+            <div class="course-badges">
+              <span class="badge-claimable">HRD Corp Claimable — up to RM1,750 per employee/day</span>
+              <span class="badge-meta">1 Day • Live Online or In-House</span>
+            </div>
+            <h3 class="course-title">AI Leadership &amp; Strategy for Managers</h3>
+            <p class="course-audience">Executive cohort for department heads, directors &amp; senior managers</p>
+            <div class="course-price">RM9,500 <span>/ cohort (up to 18 employees)</span></div>
+            <p class="course-claim-line">Within the RM10,500/day in-house cap</p>
+            <ul class="course-outcomes">
+              <li>Prioritise high-ROI AI use cases and build a 90-day rollout roadmap</li>
+              <li>Establish company AI governance and PDPA-safe adoption rules</li>
+              <li>Measure workforce time savings and manage team adoption</li>
+              <li>Tailored executive briefing aligned to your company's sector</li>
+            </ul>
+            <a href="#proposal-form" class="btn btn-navy enquire-btn" data-course="AI Leadership & Strategy for Managers">Enquire</a>
+          </article>
+        </div>
+
+        <div class="courses-notes reveal">
+          <p class="courses-note">
+            Every programme carries stackable Asia e University micro-credentials toward SPEED professional certificates.
+          </p>
+          <p class="claims-fineprint">
+            Claimable amounts follow HRD Corp's Allowable Cost Matrix (January 2026). All claims are subject to HRD Corp approval and your company's available levy balance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why HR Teams Choose AeU-SPEED -->
+    <section class="section section-tint" id="why-aeu">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">The Employer Case</span>
+          <h2 class="section-title">Why HR Teams Choose AeU-SPEED</h2>
+          <p class="section-subtitle">
+            Designed around HR levy budgets, zero administrative friction, and measurable productivity across your workforce.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 12h.01M6 12h.01M18 12h.01"/></svg>
+            </div>
+            <h3 class="feature-title">Use the levy you've already paid</h3>
+            <p class="feature-desc">Unutilised levy brings no return; convert it into workforce capability before it sits idle.</p>
+          </div>
+
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 class="feature-title">Lower training spend</h3>
+            <p class="feature-desc">Fees priced within HRD Corp claim caps, and live-online delivery removes venue, travel and meal costs entirely.</p>
+          </div>
+
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg>
+            </div>
+            <h3 class="feature-title">Productivity your CFO can see</h3>
+            <p class="feature-desc">Staff trained on GenAI workflows for email, reports, meetings and approvals; 81% of GenAI users report significant time savings.</p>
+          </div>
+
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+            </div>
+            <h3 class="feature-title">Zero admin burden on HR</h3>
+            <p class="feature-desc">AeU-SPEED prepares the e-TRiS application documents (quotation, course outline, trainer profile) and supplies attendance and completion records for your claim.</p>
+          </div>
+
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title">Lower risk</h3>
+            <p class="feature-desc">PDPA-safe AI adoption and a company safe-use policy, so AI use doesn't leak into shadow tools.</p>
+          </div>
+
+          <div class="flat-card feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3 class="feature-title">Retention</h3>
+            <p class="feature-desc">Every participant earns an Asia e University micro-credential that stacks toward SPEED professional certificates; credentials staff value and keep.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How the Claim Works -->
+    <section class="section" id="hrd-corp">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">HRD Corp e-TRiS Process</span>
+          <h2 class="section-title">How the Claim Works</h2>
+          <p class="section-subtitle">
+            Course fees are claimable from your employer levy up to RM1,750 per employee/day for public programmes and RM10,500 per group/day for in-house programmes.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="flat-card step-card reveal">
+            <div class="step-num">1</div>
+            <h3 class="step-title">e-TRiS Docs Prepared for You</h3>
+            <p class="step-desc">
+              We prepare your e-TRiS application documents (quotation, course outline, trainer profile) — done for you.
+            </p>
+          </div>
+
+          <div class="flat-card step-card reveal">
+            <div class="step-num">2</div>
+            <h3 class="step-title">Apply Before Training Starts</h3>
+            <p class="step-desc">
+              Apply on e-TRiS before training starts; obtain HRD Corp approval first for in-house runs.
+            </p>
+          </div>
+
+          <div class="flat-card step-card reveal">
+            <div class="step-num">3</div>
+            <h3 class="step-title">Train &amp; Claim Within 6 Months</h3>
+            <p class="step-desc">
+              Train your staff, keep attendance at 75% or above, and submit your claim using our attendance and completion records within 6 months.
+            </p>
+          </div>
+        </div>
+
+        <p class="claims-fineprint">
+          Claimable amounts follow HRD Corp's Allowable Cost Matrix (January 2026). All claims are subject to HRD Corp approval and your company's available levy balance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lead Form -->
+    <section class="section section-tint" id="proposal-form">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Corporate Quotation &amp; e-TRiS Pack</span>
+          <h2 class="section-title">Request a Corporate Proposal</h2>
+          <p class="section-subtitle">
+            Tell us your team size and the programme you're considering. We'll send a formal quotation and the e-TRiS document pack your application needs.
+          </p>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="lead-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="full-name">Full name *</label>
+                <input type="text" id="full-name" name="fullName" required autocomplete="name" placeholder="e.g. Aina Sofea" data-error="err-full-name">
+                <div id="err-full-name" class="error-msg">Please enter your full name.</div>
+              </div>
+
+              <div class="field">
+                <label for="company">Company *</label>
+                <input type="text" id="company" name="company" required autocomplete="organization" placeholder="e.g. Meridian Sdn Bhd" data-error="err-company">
+                <div id="err-company" class="error-msg">Please enter your company name.</div>
+              </div>
+
+              <div class="field">
+                <label for="work-email">Work email *</label>
+                <span id="email-hint" class="field-hint">Format: name@company.com.my</span>
+                <input type="email" id="work-email" name="workEmail" required autocomplete="email" placeholder="aina@company.com.my" aria-describedby="email-hint" data-error="err-work-email">
+                <div id="err-work-email" class="error-msg">Enter a valid work email address (e.g. name@company.com.my).</div>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone / WhatsApp *</label>
+                <span id="phone-hint" class="field-hint">Malaysian mobile or office number</span>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="+60 12-345 6789" aria-describedby="phone-hint" data-error="err-phone">
+                <div id="err-phone" class="error-msg">Please enter a phone or WhatsApp number.</div>
+              </div>
+
+              <div class="field">
+                <label for="company-size">Company size *</label>
+                <select id="company-size" name="companySize" required data-error="err-company-size">
+                  <option value="">Select company size...</option>
+                  <option value="1-50 employees">1–50 employees</option>
+                  <option value="51-200 employees">51–200 employees</option>
+                  <option value="201-1,000 employees">201–1,000 employees</option>
+                  <option value="1,000+ employees">1,000+ employees</option>
+                </select>
+                <div id="err-company-size" class="error-msg">Please select your company size.</div>
+              </div>
+
+              <div class="field">
+                <label for="course">Programme of interest *</label>
+                <select id="course" name="course" required data-error="err-course">
+                  <option value="">Select a programme...</option>
+                  <option value="GenAI at Work: ChatGPT, Copilot, Gemini & Claude">GenAI at Work: ChatGPT, Copilot, Gemini &amp; Claude (RM1,490/employee)</option>
+                  <option value="Build Your First AI Agent">Build Your First AI Agent (RM2,990/employee)</option>
+                  <option value="AI for HR, Marketing & Finance Teams">AI for HR, Marketing &amp; Finance Teams (RM3,190/employee)</option>
+                  <option value="AI Leadership & Strategy for Managers">AI Leadership &amp; Strategy for Managers (RM9,500/cohort)</option>
+                  <option value="In-house / custom">In-house / custom</option>
+                </select>
+                <div id="err-course" class="error-msg">Please select a programme of interest.</div>
+              </div>
+
+              <div class="field">
+                <label for="participants">Number of participants *</label>
+                <input type="number" id="participants" name="participants" required min="1" max="500" placeholder="e.g. 15" data-error="err-participants">
+                <div id="err-participants" class="error-msg">Enter at least 1 participant.</div>
+              </div>
+
+              <div class="field">
+                <label for="preferred-month">Preferred month *</label>
+                <input type="month" id="preferred-month" name="preferredMonth" required data-error="err-preferred-month">
+                <div id="err-preferred-month" class="error-msg">Please select your preferred training month.</div>
+              </div>
+
+              <div class="field field-full">
+                <label for="message">Message (optional)</label>
+                <textarea id="message" name="message" placeholder="Share department priorities, preferred dates, or whether you need an in-house cohort."></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-red" id="submit-btn">Request Corporate Proposal &amp; e-TRiS Pack</button>
+            </div>
+          </form>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite">
+            <h3 id="status-title">Proposal Request Ready</h3>
+            <p id="status-desc"></p>
+            <div class="form-status-actions" id="status-actions"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section accordion" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">HR &amp; L&amp;D Questions</span>
+          <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How much of the course fee is HRD Corp claimable?</summary>
+            <div class="faq-answer">
+              Under HRD Corp's Allowable Cost Matrix (January 2026), course fees are claimable from your employer levy up to RM1,750 per employee per day for public programmes and RM10,500 per group per day for in-house programmes, subject to HRD Corp approval via e-TRiS and your company's available levy balance.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Who delivers the training?</summary>
+            <div class="faq-answer">
+              Programmes are delivered by AeU-SPEED practitioner trainers — experienced AI specialists who build and deploy GenAI workflows and agents for organisations in Malaysia.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Online or on-site?</summary>
+            <div class="faq-answer">
+              Public cohorts are delivered live online across Malaysia so companies with teams in multiple states can train together with zero travel, venue, or meal costs. Dedicated in-house runs can be delivered live online or on-site.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What are the class sizes?</summary>
+            <div class="faq-answer">
+              Public live-online cohorts are capped at 20 participants so every employee receives direct coaching. Dedicated in-house cohorts (such as AI Leadership &amp; Strategy) accommodate up to 18 employees per group.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do participants receive a university certificate?</summary>
+            <div class="faq-answer">
+              Yes. Every employee who completes the programme earns an Asia e University (AeU) micro-credential certificate that stacks toward SPEED professional certificates.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can you run these programmes in-house for our company only?</summary>
+            <div class="faq-answer">
+              Yes. Any of our 4 programmes can be run exclusively for your company with examples tailored to your industry and internal workflows. Select "In-house / custom" in the proposal form above.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>AeU-SPEED, Asia e University</strong>
+      <span>Wisma Subang Jaya, Subang Jaya, Selangor</span>
+      <a href="https://speed.aeu.edu.my" class="footer-link" target="_blank" rel="noopener noreferrer">speed.aeu.edu.my</a>
+      <span>Concept landing page for review.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Replace with your deployed Google Apps Script Web App URL to enable live form submissions
+    const FORM_ENDPOINT = "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+    (() => {
+      // 1. Marquee Pause/Play toggle (WCAG 2.2.2)
+      const marqueeToggle = document.getElementById("marquee-toggle");
+      const marqueeTrack = document.getElementById("marquee-track");
+      if (marqueeToggle && marqueeTrack) {
+        marqueeToggle.addEventListener("click", () => {
+          const paused = marqueeTrack.classList.toggle("is-paused");
+          marqueeToggle.textContent = paused ? "Play" : "Pause";
+        });
+      }
+
+      // 2. Scroll-reveal fallback for browsers without CSS animation-timeline: view()
+      const supportsScrollTimeline = CSS.supports("(animation-timeline: view()) and (animation-range: entry)");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!supportsScrollTimeline && !prefersReducedMotion) {
+        const revealEls = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("reveal-js-pending");
+                entry.target.classList.add("reveal-js-visible");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.12 }
+        );
+        revealEls.forEach((el) => {
+          el.classList.add("reveal-js-pending");
+          observer.observe(el);
+        });
+      }
+
+      // 3. Pre-select course when clicking "Enquire" on a course card
+      const courseSelect = document.getElementById("course");
+      document.querySelectorAll(".enquire-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const courseName = btn.getAttribute("data-course");
+          if (courseSelect && courseName) {
+            courseSelect.value = courseName;
+            syncAria(courseSelect);
+          }
+        });
+      });
+
+      // 4. Accessible validation after interaction (:user-invalid + ARIA sync + fallback)
+      const form = document.getElementById("lead-form");
+      const supportsUserInvalid = CSS.supports("selector(:user-invalid)");
+      const dirtyState = new WeakMap();
+      const flagged = new WeakSet();
+      const announced = new WeakSet();
+
+      const announcer = document.createElement("div");
+      announcer.setAttribute("aria-live", "polite");
+      announcer.classList.add("visually-hidden");
+      document.body.append(announcer);
+      let announceTimer;
+      let announcedField;
+
+      const linkError = (el, shown) => {
+        const errorId = el.dataset.error;
+        if (!errorId) return;
+        const ids = (el.getAttribute("aria-describedby") || "")
+          .split(/\s+/)
+          .filter((id) => id && id !== errorId);
+        if (shown) ids.push(errorId);
+        if (ids.length) el.setAttribute("aria-describedby", ids.join(" "));
+        else el.removeAttribute("aria-describedby");
+      };
+
+      const announceError = (el) => {
+        const error = document.getElementById(el.dataset.error);
+        if (!error) return;
+        const label = el.labels?.[0] ? `${el.labels[0].textContent.trim()}: ` : "";
+        clearTimeout(announceTimer);
+        announcer.textContent = "";
+        announcedField = el;
+        announceTimer = setTimeout(() => {
+          announcer.textContent = label + error.textContent.trim();
+        }, 500);
+      };
+
+      const isFieldInvalid = (el) => {
+        if (supportsUserInvalid) return el.matches(":user-invalid");
+        return el.classList.contains("user-invalid-fallback");
+      };
+
+      function syncAria(el, announce = false) {
+        if (!el.matches?.("input, select, textarea")) return;
+        const invalid = isFieldInvalid(el);
+        if (invalid) {
+          if (announce && !announced.has(el)) {
+            announceError(el);
+            announced.add(el);
+          }
+          el.setAttribute("aria-invalid", "true");
+          linkError(el, true);
+          flagged.add(el);
+        } else if (flagged.has(el) || el.getAttribute("aria-invalid") !== "true") {
+          el.setAttribute("aria-invalid", "false");
+          linkError(el, false);
+          flagged.delete(el);
+          announced.delete(el);
+          if (announcedField === el) {
+            clearTimeout(announceTimer);
+            announcer.textContent = "";
+          }
+        }
+      }
+
+      if (form) {
+        form.querySelectorAll("input, select, textarea").forEach((el) => syncAria(el));
+
+        if (!supportsUserInvalid) {
+          const updateFallback = (input) => {
+            const valid = input.validity.valid;
+            input.classList.toggle("user-invalid-fallback", !valid);
+            input.classList.toggle("user-valid-fallback", valid);
+            syncAria(input, !valid);
+          };
+          form.addEventListener("blur", (e) => {
+            if (!e.target.checkValidity) return;
+            const st = dirtyState.get(e.target) || { interacted: false, blurred: false };
+            st.blurred = true;
+            dirtyState.set(e.target, st);
+            if (st.interacted) updateFallback(e.target);
+          }, true);
+          form.addEventListener("input", (e) => {
+            if (!e.target.checkValidity) return;
+            const st = dirtyState.get(e.target) || { interacted: false, blurred: false };
+            st.interacted = true;
+            dirtyState.set(e.target, st);
+            if (st.blurred) updateFallback(e.target);
+          });
+          form.addEventListener("change", (e) => {
+            if (!e.target.checkValidity) return;
+            const st = dirtyState.get(e.target) || { interacted: false, blurred: false };
+            st.interacted = true;
+            dirtyState.set(e.target, st);
+            if (st.blurred) updateFallback(e.target);
+          });
+        } else {
+          form.addEventListener("blur", (e) => syncAria(e.target, true), true);
+          form.addEventListener("input", (e) => {
+            if (e.target.hasAttribute("aria-invalid")) syncAria(e.target);
+          });
+          form.addEventListener("change", (e) => syncAria(e.target, true), true);
+        }
+
+        // 5. Form Submission: POST JSON to FORM_ENDPOINT or fallback to CSV + mailto:
+        const statusBox = document.getElementById("form-status");
+        const statusTitle = document.getElementById("status-title");
+        const statusDesc = document.getElementById("status-desc");
+        const statusActions = document.getElementById("status-actions");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const csvCell = (val) => `"${String(val ?? "").replace(/"/g, '""')}"`;
+
+        const buildCsvUrl = (data) => {
+          const headers = ["Timestamp", "Full Name", "Company", "Company Size", "Work Email", "Phone/WhatsApp", "Programme", "Participants", "Preferred Month", "Message"];
+          const row = [
+            data.submittedAt,
+            data.fullName,
+            data.company,
+            data.companySize,
+            data.workEmail,
+            data.phone,
+            data.course,
+            data.participants,
+            data.preferredMonth,
+            data.message
+          ];
+          const csv = `${headers.map(csvCell).join(",")}\n${row.map(csvCell).join(",")}\n`;
+          return URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8;" }));
+        };
+
+        const buildMailtoUrl = (data) => {
+          const subject = `Corporate Proposal Request: ${data.course} (${data.company})`;
+          const body = [
+            `Hi AeU-SPEED Team,`,
+            ``,
+            `We would like to request a corporate quotation and HRD Corp e-TRiS document pack:`,
+            `- Full Name: ${data.fullName}`,
+            `- Company: ${data.company}`,
+            `- Company Size: ${data.companySize}`,
+            `- Work Email: ${data.workEmail}`,
+            `- Phone / WhatsApp: ${data.phone}`,
+            `- Programme of Interest: ${data.course}`,
+            `- Number of Participants: ${data.participants}`,
+            `- Preferred Month: ${data.preferredMonth}`,
+            `- Message: ${data.message || "N/A"}`
+          ].join("\n");
+          return `mailto:speed@aeu.edu.my?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        };
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          if (!form.checkValidity()) {
+            const firstInvalid = form.querySelector(":invalid");
+            form.querySelectorAll("input, select, textarea").forEach((el) => {
+              if (!el.validity.valid) {
+                if (!supportsUserInvalid) el.classList.add("user-invalid-fallback");
+                announced.add(el);
+                syncAria(el);
+              }
+            });
+            firstInvalid?.focus();
+            return;
+          }
+
+          const formData = new FormData(form);
+          const payload = {
+            submittedAt: new Date().toISOString(),
+            fullName: formData.get("fullName").trim(),
+            company: formData.get("company").trim(),
+            companySize: formData.get("companySize"),
+            workEmail: formData.get("workEmail").trim(),
+            phone: formData.get("phone").trim(),
+            course: formData.get("course"),
+            participants: formData.get("participants"),
+            preferredMonth: formData.get("preferredMonth"),
+            message: (formData.get("message") || "").trim()
+          };
+
+          statusActions.innerHTML = "";
+          statusBox.classList.remove("is-visible");
+
+          if (FORM_ENDPOINT && FORM_ENDPOINT !== "PASTE_APPS_SCRIPT_WEB_APP_URL_HERE") {
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+            try {
+              const res = await fetch(FORM_ENDPOINT, {
+                method: "POST",
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
+                body: JSON.stringify(payload)
+              });
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              statusTitle.textContent = "Corporate Proposal Request Received";
+              statusDesc.textContent = `Thank you, ${payload.fullName}. Our AeU-SPEED coordinator will send your formal quotation and e-TRiS pack to ${payload.workEmail} shortly.`;
+              statusBox.classList.add("is-visible");
+              form.reset();
+              form.querySelectorAll("input, select, textarea").forEach((el) => {
+                el.classList.remove("user-invalid-fallback", "user-valid-fallback");
+                syncAria(el);
+              });
+            } catch (err) {
+              const csvUrl = buildCsvUrl(payload);
+              const mailtoUrl = buildMailtoUrl(payload);
+              statusTitle.textContent = "Could Not Reach Endpoint — Use Backup Below";
+              statusDesc.textContent = "We generated a CSV summary and email draft so your request isn't lost.";
+              statusActions.innerHTML = `
+                <a class="btn btn-red btn-sm" href="${csvUrl}" download="aeu-speed-proposal-lead.csv">Download Lead CSV</a>
+                <a class="btn btn-navy btn-sm" href="${mailtoUrl}">Open Email Draft</a>
+              `;
+              statusBox.classList.add("is-visible");
+            } finally {
+              submitBtn.disabled = false;
+              submitBtn.textContent = "Request Corporate Proposal & e-TRiS Pack";
+            }
+          } else {
+            const csvUrl = buildCsvUrl(payload);
+            const mailtoUrl = buildMailtoUrl(payload);
+
+            const autoDownload = document.createElement("a");
+            autoDownload.href = csvUrl;
+            autoDownload.download = "aeu-speed-proposal-lead.csv";
+            document.body.appendChild(autoDownload);
+            autoDownload.click();
+            autoDownload.remove();
+
+            statusTitle.textContent = "Lead Summary Downloaded & Email Draft Ready";
+            statusDesc.textContent = `Your proposal details for "${payload.course}" were saved as a CSV file. Click below to open your pre-filled email to speed@aeu.edu.my or download the CSV again.`;
+            statusActions.innerHTML = `
+              <a class="btn btn-red btn-sm" href="${mailtoUrl}">Send Email to speed@aeu.edu.my</a>
+              <a class="btn btn-navy btn-sm" href="${csvUrl}" download="aeu-speed-proposal-lead.csv">Download CSV Again</a>
+            `;
+            statusBox.classList.add("is-visible");
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!--
+  ============================================================================
+  GOOGLE APPS SCRIPT — LEAD FORM TO GOOGLE SHEET (doPost HANDLER + SETUP)
+  ============================================================================
+
+  function doPost(e) {
+    try {
+      const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      const data = JSON.parse(e.postData.contents);
+
+      if (sheet.getLastRow() === 0) {
+        sheet.appendRow([
+          "Timestamp",
+          "Full Name",
+          "Company",
+          "Company Size",
+          "Work Email",
+          "Phone / WhatsApp",
+          "Programme of Interest",
+          "Participants",
+          "Preferred Month",
+          "Message"
+        ]);
+      }
+
+      sheet.appendRow([
+        data.submittedAt || new Date().toISOString(),
+        data.fullName || "",
+        data.company || "",
+        data.companySize || "",
+        data.workEmail || "",
+        data.phone || "",
+        data.course || "",
+        data.participants || "",
+        data.preferredMonth || "",
+        data.message || ""
+      ]);
+
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: "ok" }))
+        .setMimeType(ContentService.MimeType.JSON);
+    } catch (err) {
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: "error", message: err.message }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+  }
+
+  5 SETUP STEPS:
+  1. Create a new Google Sheet (e.g. "AeU-SPEED AI Training Leads").
+  2. Open Extensions -> Apps Script, delete any default code, and paste the
+     doPost(e) function above, then save the project.
+  3. Click Deploy -> New deployment -> Select type: Web app.
+  4. Set "Execute as" to "Me" and "Who has access" to "Anyone", then click Deploy
+     and authorize the permissions when prompted.
+  5. Copy the generated Web app URL and paste it into the FORM_ENDPOINT constant
+     near the top of the <script> tag in index.html.
+  ============================================================================
+  -->
+</body>
+</html>
