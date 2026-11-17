@@ -332,6 +332,8 @@
       font-weight: 700;
       letter-spacing: 0.02em;
       margin-bottom: 1.35rem;
+      white-space: nowrap;
+      max-width: 100%;
     }
 
     .hero-badge-dot {
@@ -342,20 +344,32 @@
     }
 
     .hero-title {
-      font-size: clamp(2.05rem, 5.5vw, 3.65rem);
+      font-size: clamp(1.45rem, 4.4vw, 3.05rem);
       font-weight: 800;
-      line-height: 1.1;
-      max-width: 860px;
+      line-height: 1.12;
+      max-width: 1080px;
       margin-inline: auto;
       margin-bottom: 1.25rem;
+    }
+
+    .hero-title .line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 520px) {
+      .hero-title {
+        font-size: 5.9vw;
+      }
     }
 
     .hero-sub {
       font-size: clamp(1rem, 2.2vw, 1.16rem);
       color: var(--navy-75);
-      max-width: 740px;
+      max-width: 980px;
       margin-inline: auto;
       margin-bottom: 2.25rem;
+      text-wrap: balance;
     }
 
     /* Animated SVG Hero Visual */
@@ -1194,7 +1208,8 @@
         </div>
 
         <h1 class="hero-title">
-          Upskill Your Workforce in AI. <span class="accent-red">Funded by Your HRD Corp Levy.</span>
+          <span class="line">Upskill Your Workforce in AI.</span>
+          <span class="line accent-red">Funded by Your HRD Corp Levy.</span>
         </h1>
 
         <p class="hero-sub">
