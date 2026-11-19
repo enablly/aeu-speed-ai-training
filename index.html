@@ -1223,6 +1223,55 @@
       background: #c8102e;
     }
 
+
+    /* Interactive hero SVG — nodes pop + glow on hover/focus */
+    .hero-svg .mc-node {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+      cursor: pointer;
+      outline: none;
+    }
+    .hero-svg .mc-node:hover,
+    .hero-svg .mc-node:focus-visible {
+      transform: scale(1.09);
+      filter: drop-shadow(0 0 9px rgba(200, 16, 46, 0.55)) drop-shadow(0 8px 16px rgba(10, 58, 92, 0.35));
+    }
+    .hero-svg .mc-node:hover > rect,
+    .hero-svg .mc-node:focus-visible > rect {
+      stroke: #c8102e;
+      stroke-width: 2.4;
+    }
+    .hero-svg .svg-orbit-group {
+      transition: filter 0.35s ease;
+      cursor: pointer;
+    }
+    .hero-svg .svg-orbit-group:hover {
+      filter: drop-shadow(0 0 18px rgba(200, 16, 46, 0.65));
+    }
+    .hero-svg g[class*="svg-chip"] {
+      transition: filter 0.3s ease;
+      cursor: pointer;
+    }
+    .hero-svg g[class*="svg-chip"]:hover {
+      filter: drop-shadow(0 0 8px rgba(10, 58, 92, 0.55));
+    }
+    .hero-svg g[class*="svg-chip"]:hover rect {
+      stroke: #c8102e;
+      stroke-opacity: 0.9;
+    }
+    .hero-visual-hint {
+      text-align: center;
+      color: rgba(10, 58, 92, 0.6);
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-svg .mc-node { transition: none; }
+      .hero-svg .mc-node:hover,
+      .hero-svg .mc-node:focus-visible { transform: none; }
+    }
+
     .form-status {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -1443,7 +1492,7 @@
 
         <!-- Animated SVG Hero Visual (AeU Navy linework + AeU Red accent nodes on White) -->
         <div class="hero-visual-wrap">
-          <svg class="hero-svg" viewBox="0 0 1080 620" role="img" aria-label="Animated technical AI architecture diagram: data, tokenisation, embeddings, RAG, model types, model weights, inference, agents and governance connected to the AeU-SPEED workforce AI core">
+          <svg class="hero-svg" viewBox="0 0 1080 620" role="img" aria-label="Animated interactive diagram of the AeU-SPEED Micro-Credential Series: micro-credentials, stackable credits, two learning tracks, applied AI, AI agents, hybrid delivery and the pathway to an AeU Master's, around the AeU-SPEED core. Hover or focus a node to explore.">
             <rect width="1080" height="620" fill="#ffffff" rx="14"/>
             <!-- faint dot grid -->
             <defs>
@@ -1489,15 +1538,15 @@
             <circle r="3.5" fill="#c8102e"><animateMotion dur="3.2s" begin="0.9s" repeatCount="indefinite"><mpath href="#p-infer-agent"/></animateMotion></circle>
 
             <!-- Path labels -->
-            <text x="285" y="188" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">embeddings</text>
-            <text x="552" y="165" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">model load</text>
-            <text x="700" y="188" fill="#c8102e" fill-opacity="0.75" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">weights</text>
-            <text x="300" y="248" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">prompt + context</text>
-            <text x="700" y="248" fill="#c8102e" fill-opacity="0.8" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">inference</text>
-            <text x="290" y="382" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">retrieved context</text>
-            <text x="700" y="382" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">tool calls</text>
-            <text x="556" y="462" fill="#c8102e" fill-opacity="0.75" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">eval + feedback</text>
-            <text x="180" y="560" fill="#c8102e" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">RLHF feedback loop</text>
+            <text x="285" y="188" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">credits</text>
+            <text x="552" y="165" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">choose track</text>
+            <text x="700" y="188" fill="#c8102e" fill-opacity="0.75" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">stacking</text>
+            <text x="300" y="248" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">applied skills</text>
+            <text x="700" y="248" fill="#c8102e" fill-opacity="0.8" font-family="Inter, sans-serif" font-size="9.5" font-weight="700">agents at work</text>
+            <text x="290" y="382" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">hybrid learning</text>
+            <text x="700" y="382" fill="#0a3a5c" fill-opacity="0.55" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">real workflows</text>
+            <text x="556" y="462" fill="#c8102e" fill-opacity="0.75" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">assessed + certified</text>
+            <text x="180" y="560" fill="#c8102e" fill-opacity="0.7" font-family="Inter, sans-serif" font-size="9.5" font-weight="600">stack towards a Master's</text>
 
             <!-- Central core -->
             <g class="svg-orbit-group">
@@ -1505,93 +1554,95 @@
               <circle cx="540" cy="310" r="60" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1"/>
               <circle cx="540" cy="310" r="34" fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1" stroke-dasharray="3 5"/>
               <text x="540" y="296" text-anchor="middle" fill="#ffffff" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="800" letter-spacing="1">AeU-SPEED</text>
-              <text x="540" y="315" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-family="Inter, sans-serif" font-size="11" font-weight="600">WORKFORCE AI</text>
-              <text x="540" y="332" text-anchor="middle" fill="#ffffff" fill-opacity="0.65" font-family="Inter, sans-serif" font-size="9" font-weight="600">TRANSFORMER CORE</text>
+              <text x="540" y="315" text-anchor="middle" fill="#ffffff" fill-opacity="0.9" font-family="Inter, sans-serif" font-size="11" font-weight="600">MICRO-CREDENTIAL</text>
+              <text x="540" y="332" text-anchor="middle" fill="#ffffff" fill-opacity="0.65" font-family="Inter, sans-serif" font-size="9" font-weight="600">MBA • MITM PATHWAY</text>
             </g>
 
             <!-- Main nodes -->
             <g transform="translate(36, 40)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Micro-Credentials — 3 academic credits each; 2 weeks, 120 notional hours, hybrid delivery</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <path d="M27 22l8 5-8 5-8-5z M19 32l8 5 8-5" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Embeddings</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Tokenise • Chunk • 1536-d</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Micro-Credentials</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">3 Credits • 2 Weeks • Hybrid</text></g>
             </g>
             <g transform="translate(442, 28)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Two strategic learning tracks — Business &amp; Management, and Artificial Intelligence &amp; Digital Technologies</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#c8102e"/>
               <rect x="22" y="26" width="10" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="1.5"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Model Types</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">LLM • Vision • Multimodal</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Learning Tracks</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Business • AI &amp; Digital</text></g>
             </g>
             <g transform="translate(848, 40)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Stackable credits — accumulate completed modules and build towards a Master's qualification</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <ellipse cx="27" cy="25" rx="6" ry="3" fill="none" stroke="#ffffff" stroke-width="1.4"/><path d="M21 25v10c0 1.7 2.7 3 6 3s6-1.3 6-3V25 M21 30c0 1.7 2.7 3 6 3s6-1.3 6-3" fill="none" stroke="#ffffff" stroke-width="1.4"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Model Weights</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Parameters • LoRA • Fine-Tune</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Stackable Credits</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Stack Towards a Master's</text></g>
             </g>
             <g transform="translate(16, 192)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Applied AI — ChatGPT, Microsoft Copilot, Google Gemini and Claude, on your team's real work</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <path d="M23 31h8M27 27v8" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Prompt &amp; Context</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">128K–1M Window • Templates</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Applied AI</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">ChatGPT • Copilot • Claude</text></g>
             </g>
             <g transform="translate(868, 192)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>AI Agents — build working agents with n8n, MCP and Copilot Studio</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#c8102e"/>
               <path d="M28 21l-5 11h4l-1 9 6-12h-4l1-8z" fill="#ffffff"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Inference Engine</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Tokens/sec • Latency • INT8</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">AI Agents</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">n8n • MCP • Copilot Studio</text></g>
             </g>
             <g transform="translate(16, 360)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Hybrid delivery — face-to-face and online, nationwide</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#c8102e"/>
               <ellipse cx="27" cy="25" rx="6" ry="3" fill="none" stroke="#ffffff" stroke-width="1.4"/><path d="M21 25v10c0 1.7 2.7 3 6 3s6-1.3 6-3V25 M21 30c0 1.7 2.7 3 6 3s6-1.3 6-3" fill="none" stroke="#ffffff" stroke-width="1.4"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">RAG &amp; Vector Store</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Retrieval • Grounding • Citations</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Hybrid Delivery</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Face-to-Face • Online</text></g>
             </g>
             <g transform="translate(868, 360)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Design a personalised upskilling journey — one or more micro-credentials aligned with professional goals</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <rect x="22" y="26" width="10" height="10" rx="2" fill="none" stroke="#ffffff" stroke-width="1.4"/><path d="M24 26V22M30 26V22M24 40v-4M30 40v-4M22 28H18M22 34H18M36 28h-4M36 34h-4" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Agent Orchestration</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">MCP • Tools • Function Calling</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Upskilling Journey</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Personalised • Reskilling</text></g>
             </g>
             <g transform="translate(36, 488)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Department tracks — programmes for HR, Marketing &amp; Finance teams</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <path d="M22 35l4-4 3 3 4-5" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Department Tracks</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">HR, Marketing &amp; Finance</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">HR, Marketing &amp; Finance</text></g>
             </g>
             <g transform="translate(442, 530)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Enhance employability and progress in careers</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#c8102e"/>
               <path d="M22 31l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Evaluation &amp; Guardrails</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Hallucination • Human-in-Loop</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Career Advancement</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Employability • Progress</text></g>
             </g>
             <g transform="translate(848, 488)">
-              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
+              <g class="mc-node" tabindex="0"><title>Master's pathway — MBA or MITM from Asia e University</title>              <rect width="196" height="62" rx="14" fill="#ffffff" stroke="#0a3a5c" stroke-width="1.5"/>
               <circle cx="27" cy="31" r="12" fill="#0a3a5c"/>
               <path d="M27 22l8 5-8 5-8-5z M19 32l8 5 8-5" fill="none" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
-              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Deployment &amp; APIs</text>
-              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">Cloud • API • Copilot • n8n</text>
+              <text x="48" y="27" fill="#0a3a5c" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700">Master's Pathway</text>
+              <text x="48" y="44" fill="#0a3a5c" fill-opacity="0.68" font-family="Inter, sans-serif" font-size="10">MBA • MITM • AeU</text></g>
             </g>
 
             <!-- Floating technical chips -->
-            <g class="svg-chip-a"><rect x="238" y="118" width="168" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="322.0" y="135" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Attention Heads × 96</text></g>
-            <g class="svg-chip-b"><rect x="674" y="118" width="168" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="758.0" y="135" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Temp 0.7 • Top-P 0.9</text></g>
-            <g class="svg-chip-c"><rect x="238" y="452" width="176" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="326.0" y="469" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Neural Layers • Deep Stack</text></g>
-            <g class="svg-chip-a"><rect x="666" y="452" width="184" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="758.0" y="469" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">INT8 / FP16 • GPU Inference</text></g>
+            <g class="svg-chip-a"><rect x="238" y="118" width="168" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="322.0" y="135" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">3 Academic Credits</text></g>
+            <g class="svg-chip-b"><rect x="674" y="118" width="168" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="758.0" y="135" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">120 Notional Hours</text></g>
+            <g class="svg-chip-c"><rect x="238" y="452" width="176" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="326.0" y="469" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Hybrid Delivery</text></g>
+            <g class="svg-chip-a"><rect x="666" y="452" width="184" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="758.0" y="469" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Certificate of Achievement</text></g>
             <g class="svg-chip-b"><rect x="452" y="118" width="176" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="540.0" y="135" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">ChatGPT &amp; Claude</text></g>
             <g class="svg-chip-c"><rect x="452" y="476" width="176" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="540.0" y="493" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">Copilot &amp; Gemini</text></g>
             <g class="svg-chip-a"><rect x="880" y="282" width="104" height="26" rx="13" fill="#c8102e"/><text x="932.0" y="299" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">HRD Corp</text></g>
             <g class="svg-chip-b"><rect x="96" y="282" width="104" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="148.0" y="299" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">n8n + MCP</text></g>
           </svg>
         </div>
+
+        <p class="hero-visual-hint">Hover or tap a node — every element is part of the pathway.</p>
 
         <div class="hero-ctas">
           <a href="#proposal-form" class="btn btn-red">Get a Corporate Proposal</a>
