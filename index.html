@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AeU-SPEED — HRD Corp Claimable AI Programmes for Malaysian Employers</title>
-  <meta name="description" content="HRD Corp claimable corporate AI training programmes from Asia e University's School of Professional and Executive Education Development (AeU-SPEED). Live online across Malaysia with e-TRiS paperwork prepared for HR.">
+  <title>AeU-SPEED — AI Programmes &amp; Micro-Credentials for Malaysian Employers | Asia e University</title>
+  <meta name="description" content="AeU-SPEED (Asia e University) corporate AI programmes, HRD Corp claimable within levy caps with e-TRiS paperwork prepared for HR — plus the Micro-Credential Series: stackable 3-credit modules in Business &amp; Management and Artificial Intelligence &amp; Digital Technologies, building towards an AeU MBA or MITM.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -439,7 +439,7 @@
     }
 
     .hero-title {
-      font-size: clamp(1.45rem, 4.4vw, 3.05rem);
+      font-size: clamp(1.3rem, 4vw, 2.55rem);
       font-weight: 800;
       line-height: 1.12;
       max-width: 1080px;
@@ -454,7 +454,7 @@
 
     @media (max-width: 520px) {
       .hero-title {
-        font-size: 5.9vw;
+        font-size: 3.4vw;
       }
     }
 
@@ -1103,6 +1103,126 @@
       gap: 0.75rem;
     }
 
+
+    /* Hero outcome chips (official micro-credential outcomes) */
+    .hero-outcomes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-bottom: 2.25rem;
+    }
+    .outcome-chip {
+      border: 1.5px solid #0a3a5c;
+      color: #0a3a5c;
+      border-radius: 999px;
+      padding: 0.42rem 1rem;
+      font-size: 0.86rem;
+      font-weight: 700;
+      background: #ffffff;
+    }
+    .outcome-chip:nth-child(2) {
+      border-color: #c8102e;
+      color: #c8102e;
+    }
+
+    /* Stackable pathway strip */
+    .pathway {
+      margin-top: 3rem;
+      border: 1.5px solid rgba(10, 58, 92, 0.25);
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem 1.2rem;
+      background: #ffffff;
+    }
+    .pathway-title {
+      font-weight: 800;
+      color: #0a3a5c;
+      font-size: 1.12rem;
+      margin-bottom: 1.1rem;
+    }
+    .pathway-steps {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .pathway-step {
+      flex: 1 1 200px;
+      max-width: 300px;
+      border: 1px solid rgba(10, 58, 92, 0.18);
+      border-radius: 12px;
+      padding: 0.95rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .pathway-step-num {
+      color: #c8102e;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .pathway-step strong { color: #0a3a5c; }
+    .pathway-step span:last-child { color: rgba(10, 58, 92, 0.75); font-size: 0.92rem; }
+    .pathway-arrow {
+      align-self: center;
+      color: #c8102e;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+    .pathway-note {
+      margin-top: 1rem;
+      font-size: 0.86rem;
+      color: rgba(10, 58, 92, 0.65);
+    }
+    .pathway-note-center { text-align: center; }
+    @media (max-width: 640px) {
+      .pathway-arrow { transform: rotate(90deg); }
+    }
+
+    /* Micro-credential tracks */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.4rem;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .track-grid { grid-template-columns: 1fr; }
+    }
+    .track-card { padding: 1.6rem; text-align: left; }
+    .track-pathway {
+      display: inline-block;
+      background: #c8102e;
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 0.32rem 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .track-title { color: #0a3a5c; margin-bottom: 0.9rem; }
+    .module-list { list-style: none; padding: 0; margin: 0; }
+    .module-list li {
+      padding: 0.5rem 0 0.5rem 1.15rem;
+      position: relative;
+      border-bottom: 1px solid rgba(10, 58, 92, 0.10);
+      color: rgba(10, 58, 92, 0.88);
+    }
+    .module-list li:last-child { border-bottom: none; }
+    .module-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.02em;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: #c8102e;
+    }
+
     .form-status {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -1288,6 +1408,7 @@
       </button>
       <nav class="nav-bar" id="primary-nav" aria-label="Primary navigation">
         <a href="#courses" class="nav-link">Programmes</a>
+        <a href="#micro-credentials" class="nav-link">Micro-Credentials</a>
         <a href="#why-aeu" class="nav-link">Why HR Chooses AeU</a>
         <a href="#hrd-corp" class="nav-link">How the Claim Works</a>
         <a href="#faq" class="nav-link">FAQ</a>
@@ -1302,17 +1423,23 @@
       <div class="container">
         <div class="hero-badge">
           <span class="hero-badge-dot" aria-hidden="true"></span>
-          <span>HRD Corp Claimable Courses for Employers</span>
+          <span>Micro-Credential Series · HRD Corp Claimable</span>
         </div>
 
         <h1 class="hero-title">
-          <span class="line">Upskill Your Workforce in AI.</span>
-          <span class="line accent-red">Funded by Your HRD Corp Levy.</span>
+          <span class="line">Micro-Credentials That Upskill Your Workforce.</span>
+          <span class="line accent-red">Stackable Towards an AeU Master's.</span>
         </h1>
 
         <p class="hero-sub">
-          Your company already contributes 1% of payroll to HRD Corp every month. AeU-SPEED's AI programmes turn that levy into a workforce that saves hours every week — delivered live online by Asia e University, with the claim paperwork prepared for you.
+          Flexible, industry-driven learning from Asia e University. Every AeU-SPEED micro-credential carries <strong>3 academic credits</strong> and stacks towards a Master's — while the AI programmes stay claimable from the HRD Corp levy your company already pays, with the e-TRiS paperwork prepared for you.
         </p>
+
+        <div class="hero-outcomes" aria-label="What micro-credentials help participants do">
+          <span class="outcome-chip">Acquire New Skills</span>
+          <span class="outcome-chip">Enhance Employability</span>
+          <span class="outcome-chip">Progress in Careers</span>
+        </div>
 
         <!-- Animated SVG Hero Visual (AeU Navy linework + AeU Red accent nodes on White) -->
         <div class="hero-visual-wrap">
@@ -1486,7 +1613,31 @@
           </div>
         </div>
       </div>
-    </section>
+    
+        <div class="pathway reveal" aria-label="The stackable pathway to advanced qualifications">
+          <p class="pathway-title">The Stackable Pathway to Advanced Qualifications</p>
+          <div class="pathway-steps">
+            <div class="pathway-step">
+              <span class="pathway-step-num">Step 1</span>
+              <strong>Complete Micro-Credentials</strong>
+              <span>3 academic credits per module</span>
+            </div>
+            <span class="pathway-arrow" aria-hidden="true">&rarr;</span>
+            <div class="pathway-step">
+              <span class="pathway-step-num">Step 2</span>
+              <strong>Progressively Stack Credits</strong>
+              <span>Accumulate modules aligned with career goals</span>
+            </div>
+            <span class="pathway-arrow" aria-hidden="true">&rarr;</span>
+            <div class="pathway-step">
+              <span class="pathway-step-num">Step 3</span>
+              <strong>Master's Qualification</strong>
+              <span>MBA or MITM from Asia e University</span>
+            </div>
+          </div>
+          <p class="pathway-note">Credits may potentially apply to relevant qualifications at other universities, subject to their credit-transfer and recognition policies.</p>
+        </div>
+</section>
 
     <!-- Tools Marquee -->
     <section class="marquee-section" aria-label="Enterprise AI tools covered in AeU-SPEED programmes">
@@ -1617,12 +1768,63 @@
 
         <div class="courses-notes reveal">
           <p class="courses-note">
-            Every programme carries stackable Asia e University micro-credentials toward SPEED professional certificates.
+            Delivered by AeU-SPEED, Asia e University's executive education school — home of the stackable Micro-Credential Series that builds towards an AeU Master's.
           </p>
           <p class="claims-fineprint">
             Claimable amounts follow HRD Corp's Allowable Cost Matrix (January 2026). All claims are subject to HRD Corp approval and your company's available levy balance.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- Micro-Credential Series -->
+    <section class="section" id="micro-credentials">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Micro-Credentials for Upskilling, Employability &amp; Career Advancement</span>
+          <h2 class="section-title">Choose Your Strategic Learning Track</h2>
+          <p class="section-subtitle">
+            Two distinct series designed for industry leadership and digital transformation. Every micro-credential runs <strong>2 weeks (120 notional hours)</strong>, is delivered <strong>hybrid — face-to-face and online</strong>, and awards a <strong>Certificate of Achievement + Malaysia Micro-Credential Statement</strong> from Asia e University. Staff design a personalised upskilling journey — one or more micro-credentials aligned with their professional goals.
+          </p>
+        </div>
+
+        <div class="track-grid">
+          <article class="flat-card track-card reveal">
+            <span class="track-pathway">Pathway to Master of Business Administration (MBA)</span>
+            <h3 class="track-title">Micro-Credential Series in Business &amp; Management</h3>
+            <ul class="module-list">
+              <li>Strategic Leadership in the Age of Disruption</li>
+              <li>Digital Leadership &amp; Organisational Transformation</li>
+              <li>Strategic Talent &amp; Workforce Leadership</li>
+              <li>Executive Financial Strategy &amp; Value Creation</li>
+              <li>Global Economic Trends &amp; Business Decision-Making</li>
+              <li>Brand Strategy &amp; Market Positioning</li>
+              <li>Customer Experience &amp; Service Excellence Strategy</li>
+              <li>Operational Excellence &amp; Process Performance Management</li>
+              <li>Ethical Leadership, Governance &amp; Sustainable Business</li>
+              <li>Digital Innovation &amp; Business Process Transformation</li>
+            </ul>
+          </article>
+
+          <article class="flat-card track-card reveal">
+            <span class="track-pathway">Pathway to Master in Information Technology Management (MITM)</span>
+            <h3 class="track-title">Micro-Credential Series in Artificial Intelligence and Digital Technologies</h3>
+            <ul class="module-list">
+              <li>Digital IT Governance &amp; Leadership Essentials</li>
+              <li>Strategic IT Planning for Digital Transformation</li>
+              <li>Agile &amp; Professional IT Project Leadership</li>
+              <li>Digital Entrepreneurship &amp; Technology Innovation</li>
+              <li>Enterprise Cybersecurity &amp; Security Management</li>
+              <li>Cyber Risk, Law &amp; Digital Compliance</li>
+              <li>Applied Artificial Intelligence for Business &amp; Operations</li>
+              <li>Cybersecurity Foundations &amp; Threat Defense</li>
+              <li>Advanced Network &amp; Application Security</li>
+              <li>Data Science for Decision Making</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="pathway-note pathway-note-center">Micro-credential pricing is confirmed in your corporate proposal — name the track and headcount in the form below. Build the skills. Strengthen employability. Advance careers.</p>
       </div>
     </section>
 
@@ -1683,7 +1885,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <h3 class="feature-title">Retention</h3>
-            <p class="feature-desc">Every participant earns an Asia e University micro-credential that stacks toward SPEED professional certificates; credentials staff value and keep.</p>
+            <p class="feature-desc">Every micro-credential carries 3 academic credits, stackable towards an AeU Master's (MBA or MITM) — a credential staff value, on a progression path that keeps them.</p>
           </div>
         </div>
       </div>
@@ -1792,6 +1994,8 @@
                   <option value="Build Your First AI Agent">Build Your First AI Agent (RM2,990/employee)</option>
                   <option value="AI for HR, Marketing & Finance Teams">AI for HR, Marketing &amp; Finance Teams (RM3,190/employee)</option>
                   <option value="AI Leadership & Strategy for Managers">AI Leadership &amp; Strategy for Managers (RM9,500/cohort)</option>
+                  <option value="Micro-Credential Series in Business & Management">Micro-Credential Series in Business &amp; Management (Pathway to MBA)</option>
+                  <option value="Micro-Credential Series in AI and Digital Technologies">Micro-Credential Series in AI &amp; Digital Technologies (Pathway to MITM)</option>
                   <option value="In-house / custom">In-house / custom</option>
                 </select>
                 <div id="err-course" class="error-msg">Please select a programme of interest.</div>
@@ -1932,7 +2136,7 @@
           <details class="faq-item">
             <summary>Online or on-site? What about language and multi-state teams?</summary>
             <div class="faq-answer">
-              Public cohorts are delivered <strong>live online across Malaysia</strong>, so teams in KL, Penang, Johor and East Malaysia train together with zero travel, venue or meal cost — those costs are also not claimable the way fees are, so online delivery keeps the whole spend inside the claim. Dedicated in-house runs can be delivered live online or on-site at your premises. Sessions are delivered in English, with Bahasa Malaysia support for in-house cohorts on request.
+              Public cohorts are delivered <strong>live online across Malaysia</strong>, so teams in KL, Penang, Johor and East Malaysia train together with zero travel, venue or meal cost — those costs are also not claimable the way fees are, so online delivery keeps the whole spend inside the claim. Dedicated in-house runs can be delivered live online or on-site at your premises. Sessions are delivered in English, with Bahasa Malaysia support for in-house cohorts on request. Micro-Credential Series modules are delivered <strong>hybrid — face-to-face and online</strong>, so staff can join either way.
             </div>
           </details>
 
@@ -1946,7 +2150,49 @@
           <details class="faq-item">
             <summary>Do participants receive a certificate anyone recognises?</summary>
             <div class="faq-answer">
-              Yes. Every participant who completes a programme earns an <strong>Asia e University micro-credential certificate</strong>. Unlike a standalone attendance certificate, AeU micro-credentials are stackable — they count toward SPEED professional certificates, which gives staff a visible progression path and gives HR a retention story, not just a one-day course.
+              Yes — and it is a university award, not an attendance slip. Each completed micro-credential earns a <strong>Certificate of Achievement + Malaysia Micro-Credential Statement</strong> from Asia e University, and carries <strong>3 academic credits</strong>. Those credits are stackable towards an AeU Master's — the MBA or the MITM — and may potentially apply to relevant qualifications at other universities, subject to their credit-transfer and recognition policies. Staff get a visible progression path; HR gets a retention story, not just a one-day course.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>What exactly is a micro-credential?</summary>
+            <div class="faq-answer">
+              A micro-credential is a focused, university-issued module of learning built for working adults. AeU-SPEED's Micro-Credential Series offers flexible, industry-driven learning opportunities designed to help participants <strong>acquire new skills, enhance employability and progress in their careers</strong> — without committing to a full degree up front. Each micro-credential carries <strong>3 academic credits</strong>.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How does the stackable pathway to a Master's work?</summary>
+            <div class="faq-answer">
+              In three steps. <strong>Step 1:</strong> participants complete micro-credentials — 3 academic credits per module. <strong>Step 2:</strong> they progressively stack credits, accumulating completed modules based on their career goals. <strong>Step 3:</strong> the stacked credits build towards a Master's qualification — the <strong>Master of Business Administration (MBA)</strong> or the <strong>Master in Information Technology Management (MITM)</strong> from Asia e University. Credits may potentially apply to relevant qualifications at other universities too, subject to their credit-transfer and recognition policies.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Which micro-credential series can our staff choose from?</summary>
+            <div class="faq-answer">
+              Two strategic learning tracks, each with 10 micro-credentials. The <strong>Micro-Credential Series in Business &amp; Management</strong> (pathway to the MBA) covers areas such as Strategic Leadership in the Age of Disruption, Strategic Talent &amp; Workforce Leadership and Executive Financial Strategy &amp; Value Creation. The <strong>Micro-Credential Series in Artificial Intelligence and Digital Technologies</strong> (pathway to the MITM) covers areas such as Applied Artificial Intelligence for Business &amp; Operations, Enterprise Cybersecurity &amp; Security Management and Data Science for Decision Making. The full module lists are in the Micro-Credentials section above.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How long is each micro-credential, and how is it delivered?</summary>
+            <div class="faq-answer">
+              Each micro-credential runs <strong>2 weeks, with 120 notional hours</strong> of learning. Delivery is <strong>hybrid — face-to-face and online</strong> — which suits working adults and multi-state teams: staff join sessions in person or remotely while keeping their day jobs. That is the advantage of a university built for open and distance learning.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can staff take more than one micro-credential?</summary>
+            <div class="faq-answer">
+              Yes — that is the design. Participants <strong>design a personalised upskilling journey</strong>: they can choose one or more micro-credentials to meet their individual upskilling or reskilling needs, selecting modules aligned with their professional goals. For HR, that means one framework covers a single skills gap today and a department-wide progression pathway over the year.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are the micro-credentials HRD Corp claimable?</summary>
+            <div class="faq-answer">
+              Micro-Credential Series pricing is confirmed in your corporate proposal. Where a cohort is structured as an HRD Corp Claimable Course, the same rules as our other programmes apply — claimable from your levy up to the Allowable Cost Matrix caps, with the e-TRiS documents prepared by us. Tell us in the proposal form that you want the cohort structured around your levy, and we will show the levy / top-up split in writing before you commit.
             </div>
           </details>
 
@@ -1967,7 +2213,7 @@
           <details class="faq-item">
             <summary>Why a university, instead of a regular training provider?</summary>
             <div class="faq-answer">
-              Three reasons HR teams give us. First, the credential: a university micro-credential that stacks toward a qualification carries more weight with staff than a provider attendance cert. Second, delivery reach: AeU is built for online and blended learning for working adults, so nationwide cohorts are its normal mode, not an add-on. Third, continuity: SPEED can take a team from a 1-day GenAI cohort through agent building to a professional certificate on one pathway, instead of a new vendor search every quarter.
+              Three reasons HR teams give us. First, the credential: a university micro-credential that stacks toward a qualification carries more weight with staff than a provider attendance cert. Second, delivery reach: AeU is built for online and blended learning for working adults, so nationwide cohorts are its normal mode, not an add-on. Third, continuity: SPEED can take a team from a 1-day GenAI cohort through agent building to a Master's on one pathway — the MBA or MITM — instead of a new vendor search every quarter.
             </div>
           </details>
 
@@ -1994,6 +2240,7 @@
       <strong>AeU-SPEED, Asia e University</strong>
       <span>Wisma Subang Jaya, Subang Jaya, Selangor</span>
       <a href="https://speed.aeu.edu.my" class="footer-link" target="_blank" rel="noopener noreferrer">speed.aeu.edu.my</a>
+      <span>Build the skills. Strengthen employability. Advance careers.</span>
       <span>Concept landing page for review.</span>
     </div>
   </footer>
