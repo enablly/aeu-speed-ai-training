@@ -1272,6 +1272,82 @@
       .hero-svg .mc-node:focus-visible { transform: none; }
     }
 
+
+    /* Hero node dropdown panel */
+    .node-panel {
+      position: relative;
+      max-width: 880px;
+      margin: 1.1rem auto 0;
+      text-align: left;
+      background: #ffffff;
+      border: 1.5px solid #0a3a5c;
+      border-radius: 16px;
+      padding: 1.3rem 1.5rem 1.15rem;
+      box-shadow: 0 14px 30px rgba(10, 58, 92, 0.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transform-origin: top center;
+      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+    }
+    .node-panel.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .node-panel-kicker {
+      color: #c8102e;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .node-panel-title {
+      color: #0a3a5c;
+      font-size: 1.18rem;
+      margin-bottom: 0.7rem;
+    }
+    .node-panel-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem 1.6rem;
+    }
+    .node-panel-list li {
+      position: relative;
+      padding-left: 1.15rem;
+      color: rgba(10, 58, 92, 0.88);
+    }
+    .node-panel-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.52em;
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: #c8102e;
+    }
+    @media (max-width: 700px) {
+      .node-panel-list { grid-template-columns: 1fr; }
+    }
+    .node-panel-close {
+      position: absolute;
+      top: 0.55rem;
+      right: 0.8rem;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: rgba(10, 58, 92, 0.55);
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+    }
+    .node-panel-close:hover { color: #c8102e; }
+
     .form-status {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -1642,7 +1718,14 @@
           </svg>
         </div>
 
-        <p class="hero-visual-hint">Hover or tap a node — every element is part of the pathway.</p>
+        <div class="node-panel" id="node-panel" aria-live="polite">
+          <button type="button" class="node-panel-close" id="node-panel-close" aria-label="Close benefits panel">&times;</button>
+          <p class="node-panel-kicker" id="node-panel-name">Micro-Credentials</p>
+          <h3 class="node-panel-title">How This Helps Your Company</h3>
+          <ul class="node-panel-list" id="node-panel-list"></ul>
+        </div>
+
+        <p class="hero-visual-hint">Hover or tap a node — every element is part of the pathway, and each one shows how it helps your company.</p>
 
         <div class="hero-ctas">
           <a href="#proposal-form" class="btn btn-red">Get a Corporate Proposal</a>
@@ -2334,7 +2417,97 @@
         });
       }
 
-      // 3. Pre-select course when clicking "Enquire" on a course card
+      // 2b. Hero SVG node dropdown — "How This Helps Your Company"
+  const NODE_BENEFITS = [
+    { name: "Micro-Credentials", benefits: [
+      "Staff gain job-ready skills in just 2 weeks — without stepping away from their roles for a long programme",
+      "Every module carries 3 academic credits, so training spend becomes a recognised university award, not just attendance",
+      "Hybrid delivery keeps people at work — no travel, venue or meal costs on top of fees",
+      "A visible university credential tells staff the company invests in them — a proven retention lever"
+    ]},
+    { name: "Learning Tracks", benefits: [
+      "Two ready-made pathways — Business & Management, and AI & Digital Technologies — so HR stops stitching together one-off courses",
+      "Departments learn one shared playbook instead of scattered individual skills",
+      "Tracks map to succession needs: future managers on the MBA track, digital leads on the MITM track",
+      "One framework for budgeting, scheduling and reporting — less admin for HR"
+    ]},
+    { name: "Stackable Credits", benefits: [
+      "No training is wasted: credits from every completed module accumulate towards a Master's",
+      "Staff see visible progress after each module, which keeps motivation and completion rates up",
+      "Your talent bench deepens year after year instead of restarting with entry-level courses",
+      "Credits may also apply to qualifications at other universities, so the investment stays portable"
+    ]},
+    { name: "Applied AI", benefits: [
+      "Staff draft emails, reports and meeting minutes in a fraction of the time — hours returned every week",
+      "Published employer research finds 81% of GenAI users report significant time savings",
+      "Teams standardise on governed, PDPA-safe AI use instead of personal shadow tools",
+      "It runs on tools your company already licenses — no new software project or IT rollout"
+    ]},
+    { name: "AI Agents", benefits: [
+      "Repetitive workflows — approvals, data entry, follow-ups — run automatically instead of eating staff hours",
+      "Cohorts leave with working agents built on real company processes, not demo slides",
+      "Less manual processing means fewer errors and faster turnaround for your customers",
+      "In-house champions reduce long-term dependence on external automation vendors"
+    ]},
+    { name: "Hybrid Delivery", benefits: [
+      "Multi-state teams — KL, Penang, Johor, East Malaysia — train together with zero travel cost",
+      "Face-to-face where it matters, online where it doesn't: scheduling flexes around rosters and operations",
+      "Online delivery keeps the spend on fees, which are the claimable part under HRD Corp rules",
+      "Working adults learn without relocating or pausing their jobs"
+    ]},
+    { name: "Upskilling Journey", benefits: [
+      "Each employee follows a personalised path matched to their role and goals — higher engagement, better completion",
+      "HR can reskill staff whose jobs automation is changing, before it becomes a redundancy problem",
+      "Scales from one person's skills gap to a department-wide development plan",
+      "Progress per employee is trackable for appraisals, talent reviews and succession planning"
+    ]},
+    { name: "Department Tracks", benefits: [
+      "Training uses each department's real work — candidate screening in HR, campaigns in Marketing, variance reporting in Finance",
+      "Function-specific skills land faster and stick better than generic courses",
+      "Departments share one AI standard, so cross-team handoffs stop breaking",
+      "HR receives a completion report by department — attendance, artefacts and adoption gaps"
+    ]},
+    { name: "Career Advancement", benefits: [
+      "A visible progression path is a retention tool — trained staff are far less likely to leave",
+      "Internal mobility improves: staff qualify for higher roles inside your company first",
+      "Employer brand strengthens — candidates notice companies that fund Master's pathways",
+      "Succession pipelines deepen without paying external hiring premiums"
+    ]},
+    { name: "Master's Pathway", benefits: [
+      "Training budget builds towards a Master's degree — the strongest development story HR can offer staff",
+      "Grow leaders internally instead of competing for scarce, expensive external hires",
+      "A multi-year pathway anchors your best people for years, not months",
+      "A university qualification carries weight with staff, management and auditors alike"
+    ]}
+  ];
+  const nodePanel = document.getElementById("node-panel");
+  const nodePanelName = document.getElementById("node-panel-name");
+  const nodePanelList = document.getElementById("node-panel-list");
+  const svgNodes = document.querySelectorAll(".hero-svg .mc-node");
+  const showNodePanel = (i) => {
+    const data = NODE_BENEFITS[i];
+    if (!data) return;
+    nodePanelName.textContent = data.name;
+    nodePanelList.replaceChildren(...data.benefits.map((b) => {
+      const li = document.createElement("li");
+      li.textContent = b;
+      return li;
+    }));
+    nodePanel.classList.add("is-open");
+  };
+  const hideNodePanel = () => nodePanel.classList.remove("is-open");
+  if (nodePanel && svgNodes.length === NODE_BENEFITS.length) {
+    svgNodes.forEach((node, i) => {
+      node.addEventListener("mouseenter", () => showNodePanel(i));
+      node.addEventListener("focus", () => showNodePanel(i));
+      node.addEventListener("click", () => showNodePanel(i));
+    });
+    const closeBtn = document.getElementById("node-panel-close");
+    if (closeBtn) closeBtn.addEventListener("click", hideNodePanel);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideNodePanel(); });
+  }
+
+  // 3. Pre-select course when clicking "Enquire" on a course card
       const courseSelect = document.getElementById("course");
       document.querySelectorAll(".enquire-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
