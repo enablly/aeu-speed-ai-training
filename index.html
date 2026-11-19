@@ -1273,78 +1273,103 @@
     }
 
 
-    /* Hero node dropdown panel */
-    .node-panel {
+    /* Hero node tooltip callout (overlaps the SVG, tail points at the node) */
+    .hero-visual-wrap {
       position: relative;
-      max-width: 880px;
-      margin: 1.1rem auto 0;
+    }
+    .node-panel {
+      position: absolute;
+      z-index: 6;
+      width: min(350px, 92%);
       text-align: left;
       background: #ffffff;
       border: 1.5px solid #0a3a5c;
-      border-radius: 16px;
-      padding: 1.3rem 1.5rem 1.15rem;
-      box-shadow: 0 14px 30px rgba(10, 58, 92, 0.14);
+      border-radius: 14px;
+      padding: 1rem 1.1rem 0.9rem;
+      box-shadow: 0 16px 34px rgba(10, 58, 92, 0.25);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(-8px);
-      transform-origin: top center;
-      transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+      transform: translateY(5px) scale(0.97);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+      pointer-events: none;
     }
+    .node-panel.tip-below { transform-origin: var(--arrow-x, 50%) -10px; }
+    .node-panel.tip-above { transform-origin: var(--arrow-x, 50%) calc(100% + 10px); }
     .node-panel.is-open {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .node-panel::before {
+      content: "";
+      position: absolute;
+      left: var(--arrow-x, 50%);
+      margin-left: -8px;
+      width: 16px;
+      height: 16px;
+      background: #ffffff;
+      transform: rotate(45deg);
+    }
+    .node-panel.tip-below::before {
+      top: -9px;
+      border-left: 1.5px solid #0a3a5c;
+      border-top: 1.5px solid #0a3a5c;
+    }
+    .node-panel.tip-above::before {
+      bottom: -9px;
+      border-right: 1.5px solid #0a3a5c;
+      border-bottom: 1.5px solid #0a3a5c;
     }
     .node-panel-kicker {
       color: #c8102e;
       font-weight: 800;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.15rem;
     }
     .node-panel-title {
       color: #0a3a5c;
-      font-size: 1.18rem;
-      margin-bottom: 0.7rem;
+      font-size: 1.05rem;
+      margin-bottom: 0.55rem;
     }
     .node-panel-list {
       list-style: none;
       padding: 0;
       margin: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.45rem 1.6rem;
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
     }
     .node-panel-list li {
       position: relative;
-      padding-left: 1.15rem;
+      padding-left: 1.1rem;
+      font-size: 0.93rem;
       color: rgba(10, 58, 92, 0.88);
     }
     .node-panel-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.52em;
+      top: 0.5em;
       width: 7px;
       height: 7px;
       border-radius: 2px;
       background: #c8102e;
     }
-    @media (max-width: 700px) {
-      .node-panel-list { grid-template-columns: 1fr; }
-    }
     .node-panel-close {
       position: absolute;
-      top: 0.55rem;
-      right: 0.8rem;
+      top: 0.45rem;
+      right: 0.7rem;
       background: none;
       border: none;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       line-height: 1;
       color: rgba(10, 58, 92, 0.55);
       cursor: pointer;
       padding: 0.2rem 0.4rem;
+      z-index: 1;
     }
     .node-panel-close:hover { color: #c8102e; }
 
@@ -1716,13 +1741,12 @@
             <g class="svg-chip-a"><rect x="880" y="282" width="104" height="26" rx="13" fill="#c8102e"/><text x="932.0" y="299" text-anchor="middle" fill="#ffffff" font-family="Inter, sans-serif" font-size="10.5" font-weight="700">HRD Corp</text></g>
             <g class="svg-chip-b"><rect x="96" y="282" width="104" height="26" rx="13" fill="#ffffff" stroke="#0a3a5c" stroke-opacity="0.32"/><text x="148.0" y="299" text-anchor="middle" fill="#0a3a5c" font-family="Inter, sans-serif" font-size="10.5" font-weight="600">n8n + MCP</text></g>
           </svg>
-        </div>
-
-        <div class="node-panel" id="node-panel" aria-live="polite">
-          <button type="button" class="node-panel-close" id="node-panel-close" aria-label="Close benefits panel">&times;</button>
-          <p class="node-panel-kicker" id="node-panel-name">Micro-Credentials</p>
-          <h3 class="node-panel-title">How This Helps Your Company</h3>
-          <ul class="node-panel-list" id="node-panel-list"></ul>
+          <div class="node-panel" id="node-panel" aria-live="polite">
+            <button type="button" class="node-panel-close" id="node-panel-close" aria-label="Close benefits panel">&times;</button>
+            <p class="node-panel-kicker" id="node-panel-name">Micro-Credentials</p>
+            <h3 class="node-panel-title">How This Helps Your Company</h3>
+            <ul class="node-panel-list" id="node-panel-list"></ul>
+          </div>
         </div>
 
         <p class="hero-visual-hint">Hover or tap a node — every element is part of the pathway, and each one shows how it helps your company.</p>
@@ -2484,19 +2508,48 @@
   const nodePanelName = document.getElementById("node-panel-name");
   const nodePanelList = document.getElementById("node-panel-list");
   const svgNodes = document.querySelectorAll(".hero-svg .mc-node");
+  const heroWrap = document.querySelector(".hero-visual-wrap");
+  let openNodeIndex = -1;
+  const placePanel = (node) => {
+    const wrapRect = heroWrap.getBoundingClientRect();
+    const r = node.getBoundingClientRect();
+    const cx = r.left + r.width / 2 - wrapRect.left;
+    const panelW = Math.min(350, wrapRect.width * 0.92);
+    let left = cx - panelW / 2;
+    left = Math.max(8, Math.min(left, wrapRect.width - panelW - 8));
+    nodePanel.style.width = panelW + "px";
+    nodePanel.style.left = left + "px";
+    nodePanel.style.setProperty("--arrow-x", (cx - left) + "px");
+    const nodeTop = r.top - wrapRect.top;
+    const below = nodeTop < wrapRect.height / 2;
+    nodePanel.classList.toggle("tip-below", below);
+    nodePanel.classList.toggle("tip-above", !below);
+    if (below) {
+      nodePanel.style.top = (nodeTop + r.height + 12) + "px";
+      nodePanel.style.bottom = "auto";
+    } else {
+      nodePanel.style.top = "auto";
+      nodePanel.style.bottom = (wrapRect.height - nodeTop + 12) + "px";
+    }
+  };
   const showNodePanel = (i) => {
     const data = NODE_BENEFITS[i];
-    if (!data) return;
+    if (!data || !heroWrap) return;
+    openNodeIndex = i;
     nodePanelName.textContent = data.name;
     nodePanelList.replaceChildren(...data.benefits.map((b) => {
       const li = document.createElement("li");
       li.textContent = b;
       return li;
     }));
+    placePanel(svgNodes[i]);
     nodePanel.classList.add("is-open");
   };
-  const hideNodePanel = () => nodePanel.classList.remove("is-open");
-  if (nodePanel && svgNodes.length === NODE_BENEFITS.length) {
+  const hideNodePanel = () => {
+    nodePanel.classList.remove("is-open");
+    openNodeIndex = -1;
+  };
+  if (nodePanel && heroWrap && svgNodes.length === NODE_BENEFITS.length) {
     svgNodes.forEach((node, i) => {
       node.addEventListener("mouseenter", () => showNodePanel(i));
       node.addEventListener("focus", () => showNodePanel(i));
@@ -2505,6 +2558,15 @@
     const closeBtn = document.getElementById("node-panel-close");
     if (closeBtn) closeBtn.addEventListener("click", hideNodePanel);
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") hideNodePanel(); });
+    document.addEventListener("click", (e) => {
+      if (openNodeIndex < 0) return;
+      if (nodePanel.contains(e.target)) return;
+      if ([...svgNodes].some((n) => n.contains(e.target))) return;
+      hideNodePanel();
+    });
+    window.addEventListener("resize", () => {
+      if (openNodeIndex >= 0) placePanel(svgNodes[openNodeIndex]);
+    });
   }
 
   // 3. Pre-select course when clicking "Enquire" on a course card
