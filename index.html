@@ -1373,6 +1373,105 @@
     }
     .node-panel-close:hover { color: #c8102e; }
 
+
+    /* Credibility strip (hero) */
+    .cred-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.45rem 1.4rem;
+      max-width: 1020px;
+      margin: 1.15rem auto 0;
+      padding: 0.8rem 1rem;
+      border-top: 1px solid rgba(10, 58, 92, 0.14);
+      border-bottom: 1px solid rgba(10, 58, 92, 0.14);
+      color: rgba(10, 58, 92, 0.85);
+      font-size: 0.92rem;
+    }
+    .cred-strip strong { color: #0a3a5c; }
+    .cred-stars { color: #c8102e; letter-spacing: 0.1em; }
+    .cred-item { white-space: nowrap; }
+
+    /* Testimonials (navy band) */
+    .testi-section {
+      background: linear-gradient(160deg, #0a3a5c, #072a44);
+    }
+    .section-title.light { color: #ffffff; }
+    .section-sub.light { color: rgba(255, 255, 255, 0.85); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 980px) {
+      .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .testi-grid { grid-template-columns: 1fr; }
+      .cred-item { white-space: normal; }
+    }
+    .testi-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 16px;
+      padding: 1.3rem;
+      margin: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .testi-stars { color: #ffffff; letter-spacing: 0.15em; }
+    .testi-quote {
+      color: #ffffff;
+      font-size: 1rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .testi-person {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      margin-top: auto;
+    }
+    .testi-photo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #c8102e;
+      background: #ffffff;
+      flex: none;
+    }
+    .testi-photo-fallback {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #c8102e;
+      font-size: 1.5rem;
+    }
+    .testi-meta strong {
+      color: #ffffff;
+      display: block;
+      font-size: 0.95rem;
+    }
+    .testi-meta span {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.83rem;
+      display: block;
+    }
+    .testi-meta em {
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.75rem;
+      font-style: normal;
+    }
+    .testi-note {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.8rem;
+      margin-top: 1.4rem;
+    }
+
     .form-status {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -1560,6 +1659,7 @@
         <a href="#courses" class="nav-link">Programmes</a>
         <a href="#micro-credentials" class="nav-link">Micro-Credentials</a>
         <a href="#why-aeu" class="nav-link">Why HR Chooses AeU</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
         <a href="#hrd-corp" class="nav-link">How the Claim Works</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#proposal-form" class="btn btn-red btn-sm">Get a Corporate Proposal</a>
@@ -1589,6 +1689,14 @@
           <span class="outcome-chip">Acquire New Skills</span>
           <span class="outcome-chip">Enhance Employability</span>
           <span class="outcome-chip">Progress in Careers</span>
+        </div>
+
+        <div class="cred-strip" aria-label="Asia e University credibility at a glance">
+          <span class="cred-item"><span class="cred-stars" aria-hidden="true">★★★★★</span> <strong>4.6/5</strong>&nbsp;student rating · Studyportals</span>
+          <span class="cred-item"><strong>MQA-Accredited</strong>&nbsp;University</span>
+          <span class="cred-item">SETARA <strong>“Excellent”</strong>&nbsp;· Teaching &amp; Learning</span>
+          <span class="cred-item"><strong>29,000+</strong>&nbsp;learners · 80+ countries</span>
+          <span class="cred-item">Est. <strong>2007</strong>&nbsp;· Asia Cooperation Dialogue</span>
         </div>
 
         <!-- Animated SVG Hero Visual (AeU Navy linework + AeU Red accent nodes on White) -->
@@ -2050,6 +2158,60 @@
     </section>
 
     <!-- How the Claim Works -->
+    <!-- Testimonials -->
+    <section class="section testi-section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title light">What AeU Graduates &amp; Students Say</h2>
+        <p class="section-sub light">Real testimonials published by Asia e University, plus independent student reviews — the same flexible, work-friendly learning your employees would get.</p>
+        <div class="testi-grid">
+          <figure class="testi-card">
+            <blockquote class="testi-quote">“The APEL.Q pathway allowed me to leverage my prior learning and professional experience, enabling me to fast-track my education and save valuable time and resources.”</blockquote>
+            <figcaption class="testi-person">
+              <img class="testi-photo" src="photo-fauzy.jpg" alt="Portrait of Mohamad Fauzy bin Abdul Wahab" loading="lazy">
+              <span class="testi-meta"><strong>Mohamad Fauzy bin Abdul Wahab</strong><span>Chief Operating Officer, World Trade Centre Kuala Lumpur · MBA, Class of 2023</span><em>AeU MBA programme site</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">“I am grateful for the opportunities and leave with a commitment to lifelong learning. Thank you, AeU, for igniting my curiosity and being a beacon of excellence.”</blockquote>
+            <figcaption class="testi-person">
+              <img class="testi-photo" src="photo-irmohizam.jpg" alt="Portrait of Dato Sri Dr. Haji Irmohizam bin Ibrahim" loading="lazy">
+              <span class="testi-meta"><strong>Dato Sri Dr. Haji Irmohizam bin Ibrahim</strong><span>Group Managing Director, World Trade Centre Kuala Lumpur · DBA, Graduate of 2023</span><em>Published on aeu.edu.my</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">“Finding an educational path that acknowledged my practical experiences was pivotal. The APEL.Q pathway allowed me to integrate my previous professional experiences into my academic progression.”</blockquote>
+            <figcaption class="testi-person">
+              <img class="testi-photo" src="photo-nurtria.jpg" alt="Portrait of Nurtria Wulandari Arifin" loading="lazy">
+              <span class="testi-meta"><strong>Nurtria Wulandari Arifin</strong><span>Founder, Mutyara Beauty · BBA, Class of 2023</span><em>Published on aeu.edu.my</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">“Earning my APEL.Q DBA from Asia e University has been a transformative experience, leveraging my real-world expertise to achieve a prestigious academic qualification.”</blockquote>
+            <figcaption class="testi-person">
+              <img class="testi-photo" src="photo-azih.jpg" alt="Portrait of Datuk Dr. Azih bin Muda" loading="lazy">
+              <span class="testi-meta"><strong>Datuk Dr. Azih bin Muda</strong><span>Chairman, Koperasi KOSPETA Malaysia Berhad · DBA, Class of 2023</span><em>Published on aeu.edu.my</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-card">
+            <blockquote class="testi-quote">“This innovative programme provides the flexibility to pursue our passion and translate our rich experiences into tangible insights for academia, industry, and policymakers.”</blockquote>
+            <figcaption class="testi-person">
+              <img class="testi-photo" src="photo-abdrani.jpg" alt="Portrait of Datuk Dr. Abd Rani bin Lebai Jaafar" loading="lazy">
+              <span class="testi-meta"><strong>Datuk Dr. Abd Rani bin Lebai Jaafar</strong><span>Former Chairman, Bank Rakyat Malaysia · DBA, Class of 2023</span><em>Published on aeu.edu.my</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-card">
+            <div class="testi-stars" aria-label="Rated 5 out of 5">★★★★★</div>
+            <blockquote class="testi-quote">“My overall experience with the Executive MSc in Information Security program has been exceptional… the quality of the faculty and the practical, real-world approach to learning.”</blockquote>
+            <figcaption class="testi-person">
+              <span class="testi-photo testi-photo-fallback" aria-hidden="true">★</span>
+              <span class="testi-meta"><strong>Executive MSc in Information Security student</strong><span>Working professional · studied Feb 2023 – May 2026</span><em>Independent 5/5 review · Studyportals</em></span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="testi-note">Testimonials and photos: Asia e University (aeu.edu.my) and the AeU MBA programme site. Independent review: Studyportals (MastersPortal), where students rate AeU 4.6/5.</p>
+      </div>
+    </section>
+
     <section class="section" id="hrd-corp">
       <div class="container">
         <div class="section-header">
