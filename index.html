@@ -1384,14 +1384,37 @@
       gap: 0.45rem 1.4rem;
       max-width: 1020px;
       margin: 1.15rem auto 0;
-      padding: 0.8rem 1rem;
-      border-top: 1px solid rgba(10, 58, 92, 0.14);
-      border-bottom: 1px solid rgba(10, 58, 92, 0.14);
+      padding: 0.7rem 1.2rem;
+      background: linear-gradient(180deg, rgba(10, 58, 92, 0.075), rgba(10, 58, 92, 0.045));
+      border: 1px solid rgba(10, 58, 92, 0.18);
+      border-radius: 18px;
+      box-shadow: 0 2px 10px rgba(10, 58, 92, 0.06);
       color: rgba(10, 58, 92, 0.85);
       font-size: 0.92rem;
     }
     .cred-strip strong { color: #0a3a5c; }
     .cred-stars { color: #c8102e; letter-spacing: 0.1em; }
+    .avatar-stack { display: inline-flex; align-items: center; }
+    .stack-av {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      margin-left: -10px;
+      object-fit: cover;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(10, 58, 92, 0.25);
+      flex: none;
+    }
+    .avatar-stack .stack-av:first-child { margin-left: 0; }
+    .stack-mono, .stack-more {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .stack-mono { background: #0a3a5c; color: #ffffff; font-size: 0.66rem; letter-spacing: 0.02em; }
+    .stack-more { background: #c8102e; color: #ffffff; font-size: 0.72rem; }
     .cred-item { white-space: nowrap; }
 
     /* Testimonials (navy band) */
@@ -1710,6 +1733,7 @@
         </div>
 
         <div class="cred-strip" aria-label="Asia e University credibility at a glance">
+          <span class="avatar-stack" aria-hidden="true"><img class="stack-av" src="photo-fauzy.jpg" alt=""><img class="stack-av" src="photo-irmohizam.jpg" alt=""><img class="stack-av" src="photo-nurtria.jpg" alt=""><span class="stack-av stack-mono">IR</span><span class="stack-av stack-mono">AH</span><span class="stack-av stack-more">+4</span></span>
           <span class="cred-item"><span class="cred-stars" aria-hidden="true">★★★★★</span> <strong>4.6/5</strong>&nbsp;student rating · Studyportals</span>
           <span class="cred-item"><strong>MQA-Accredited</strong>&nbsp;University</span>
           <span class="cred-item">SETARA <strong>“Excellent”</strong>&nbsp;· Teaching &amp; Learning</span>
