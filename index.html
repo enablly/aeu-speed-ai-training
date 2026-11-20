@@ -1514,6 +1514,56 @@
     }
     .testi-in-hero .testi-grid { text-align: left; }
 
+
+    /* Special AI Advisors */
+    .advisor-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.4rem;
+      max-width: 960px;
+      margin: 2rem auto 0;
+    }
+    @media (min-width: 768px) {
+      .advisor-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .advisor-card {
+      background: #ffffff;
+      border: 1px solid rgba(10, 58, 92, 0.16);
+      border-radius: 18px;
+      padding: 2.1rem 1.7rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(10, 58, 92, 0.06);
+    }
+    .advisor-photo {
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #c8102e;
+      margin-bottom: 1.1rem;
+      background: #ffffff;
+    }
+    .advisor-tag {
+      display: block;
+      color: #c8102e;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+    .advisor-name { color: #0a3a5c; font-size: 1.3rem; margin: 0 0 0.3rem; }
+    .advisor-title { color: rgba(10, 58, 92, 0.75); font-size: 0.92rem; font-weight: 600; margin: 0 0 0.9rem; }
+    .advisor-bio { color: rgba(10, 58, 92, 0.85); font-size: 0.95rem; line-height: 1.65; margin: 0 0 1.1rem; }
+    .advisor-link {
+      color: #0a3a5c;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border-bottom: 2px solid #c8102e;
+      padding-bottom: 1px;
+    }
+
     .form-status {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -2616,6 +2666,34 @@
               Participant names can usually be updated before the cohort starts — tell us as early as you can, because the e-TRiS grant is tied to the application. Date changes are tighter: because an approved HRD Corp grant cannot simply be modified, moving a confirmed in-house date may require a new application. Talk to us before you submit the grant if your dates are not yet firm, and we will sequence the application around that.
             </div>
           </details>
+        </div>
+      </div>
+    </section>
+    <!-- Special AI Advisors -->
+    <section class="section" id="advisors">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Special AI Advisors</span>
+          <h2 class="section-title">Guided by Practitioners Who Deploy AI</h2>
+          <p class="section-subtitle">AeU-SPEED&rsquo;s AI programmes are shaped by advisors who put AI to work inside real companies. They help your organisation get AI-ready &mdash; find the use cases that pay back first, train your teams on the tools they will actually use, and turn new skills into working AI on the job.</p>
+        </div>
+        <div class="advisor-grid">
+          <article class="advisor-card reveal">
+            <img class="advisor-photo" src="photo-leong.jpg" alt="Portrait of Leong Joon Teng" loading="lazy">
+            <span class="advisor-tag">Special AI Advisor</span>
+            <h3 class="advisor-name">Leong Joon Teng</h3>
+            <p class="advisor-title">Director, Integrio Business Solutions &middot; Head of Strategic Relations, Nardell Group</p>
+            <p class="advisor-bio">Business strategist with 28+ years across ICT, technology and energy, spanning sales, operations and business development in the private and public sectors. A startup mentor with BEYOND4 (MOSTI and Cradle Fund programmes) and an advisor to BlackStorm Consulting, Leong helps business owners move from running a business to building one &mdash; most recently bringing voice-AI and automation solutions into Malaysian companies. As a Special AI Advisor, he helps leadership teams spot where AI pays back first, and adopt it without disrupting operations.</p>
+            <a class="advisor-link" href="https://www.linkedin.com/in/leongjoonteng/" target="_blank" rel="noopener">View LinkedIn profile</a>
+          </article>
+          <article class="advisor-card reveal">
+            <img class="advisor-photo" src="photo-adam.jpg" alt="Portrait of Adam Lau" loading="lazy">
+            <span class="advisor-tag">Special AI Advisor</span>
+            <h3 class="advisor-name">Adam Lau</h3>
+            <p class="advisor-title">Regional Digital Growth Leader &middot; Founder, Enablly</p>
+            <p class="advisor-bio">Adam leads digital growth and marketing across APAC, and spends his days putting AI to work inside commercial teams &mdash; AI agents, automation workflows and AI-assisted campaigns, measured in hours saved. Through his agency, Enablly, he has helped companies in fintech, trading and B2B services adopt AI the practical way. As a Special AI Advisor, he helps your company get AI-ready: audit where AI saves time today, train your teams on ChatGPT, Copilot, Gemini and Claude, and deploy agents on real workflows.</p>
+            <a class="advisor-link" href="https://www.linkedin.com/in/adam-enablly/" target="_blank" rel="noopener">View LinkedIn profile</a>
+          </article>
         </div>
       </div>
     </section>
